@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SdApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="description" content="StartupDecode - The easiest way to code an MVP for biz guys!">
+  <meta name="author" content="Amine Sadry">
+  
+  <!-- for Facebook -->          
+  <meta property="og:title" content="StartupDecode" />
+  <meta property="og:type" content="Organisation" />
+  <meta property="og:image" content="http://startupdecode.com/img/img01.jpg" />
+  <meta property="og:url" content="http://startupdecode.com" />
+  <meta property="og:description" content="StartupDecode - The easiest way to code an MVP for biz guys!" />
+  <title>StartupDecode</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,10 +22,12 @@
 
 <%= render "layouts/header" %>
 
-<div class="container">
+<div class="">
 	<%= yield %>
 </div>
 
+
+<%= render "layouts/footer" %>
 
 </body>
 </html>
