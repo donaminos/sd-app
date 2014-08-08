@@ -1,3 +1,14 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-bkg{
+  background-image:image-url("/assets/img/img01.jpg");
+}
+
+.mouvement-bkg{
+	background-image: image-url("/assets/img/img03.jpg");
+}
+.glory-bkg{
+	background-image: image-url("/assets/img/img02.jpg");
+}
