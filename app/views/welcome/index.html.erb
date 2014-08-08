@@ -46,7 +46,8 @@
           </div>
           <div class="row">
             <div class="col-md-5 col-md-push-7">
-              <img src='<%= asset_path("/assets/img/alldevice.png") %>' class="img-responsive">
+              <%= image_tag("alldevice.png", class: "img-responsive" ) %>
+           
             </div>
             <div class="col-md-7 col-md-pull-5">
               <div class="row">
@@ -264,10 +265,11 @@
          <div class="col-md-4 col-sm-4 col-xs-8 col-md-offset-4 col-sm-offset-4 col-xs-offset-1" id="hover-cap-4col">
 
            <div class="caption">
-            <img src='<%= asset_path("/assets/img/me.jpg") %>' class="avatar img-responsive img-circle" width="280" alt="just me">
+            <%= image_tag("me.jpg", class: "avatar img-responsive img-circle", width: "280", alt: "just me") %>
+          
           </div>
 
-          <img src='<%= asset_path("/assets/img/profile.jpg") %>' class="avatar img-responsive img-circle" width="280" alt="just me">
+<%= image_tag("profile.jpg", class: "avatar img-responsive img-circle", width:"280", alt:"just me") %>
 
         </div>
       </div>

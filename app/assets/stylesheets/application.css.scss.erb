@@ -6,10 +6,10 @@
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('/assets/glyphicons-halflings-regular.eot');
-  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       url('/assets/glyphicons-halflings-regular.woff') format('woff'), 
-       url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+  src: url('<%= asset_path("glyphicons-halflings-regular.eot") %>');
+  src: url('<%= asset_path("glyphicons-halflings-regular.eot?#iefix") %>') format('embedded-opentype'), 
+       url('<%= asset_path("glyphicons-halflings-regular.woff") %>') format('woff'), 
+       url('<%= asset_path("glyphicons-halflings-regular.ttf") %>') format('truetype'), 
        url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
@@ -26,11 +26,11 @@
 
 @font-face {
   font-family: "FontMfizz";
-  src: url("/assets/font-mfizz.eot");
-  src: url("/assets/font-mfizz.eot?#iefix") format("embedded-opentype"),
-       url("/assets/font-mfizz.woff") format("woff"),
-       url("/assets/font-mfizz.ttf") format("truetype"),
-       url("/assets/font-mfizz.svg#font-mfizz") format("svg");
+  src: url('<%= asset_path("font-mfizz.eot") %>');
+  src: url('<%= asset_path("font-mfizz.eot?#iefix") %>') format("embedded-opentype"),
+       url('<%= asset_path("font-mfizz.woff") %>') format("woff"),
+       url('<%= asset_path("font-mfizz.ttf") %>') format("truetype"),
+       url('<%= asset_path("font-mfizz.svg#font-mfizz") %>') format("svg");
   font-weight: normal;
   font-style: normal;
 }
