@@ -58,7 +58,7 @@ body{
 	padding: 50px 0 0;
 	color: #5c7280;
 	overflow-x: hidden; 
-	background: #1b1e24;
+	background: #FFF; /* #1b1e24; */
 	scrollbar-face-color: #121212;
 	text-shadow: none;
 	z-index: 1;
@@ -747,6 +747,7 @@ a:hover{
 #about{
 	width: 100%;
 	padding: 160px 0;
+	background: #1b1e24;
 }
 
 #about h2, #about h3{
@@ -1806,3 +1807,4 @@ a:hover{
 .text-justify{
 		text-align: justify;
 }
+

@@ -1,0 +1,46 @@
+<div class="container margin-navbar-top">
+  <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+       
+        <h1>Lest's startup</h1>
+
+        <br>
+              <% @courses.each do |course| %>
+
+              
+
+               <div class="">
+                <div class="[ panel panel-default ] panel-google-plus">
+             
+                    <div class="panel-google-plus-tags ">
+                      <span class="alert order-bkg">#<%= course.order %></span>
+                    </div>
+                    
+                    <div class="panel-heading">
+                      
+                        <h2><%= course.title %></h2>
+                       
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead"> <%= course.description %> </p>
+                    </div>
+                    <div class="panel-footer">
+                       <%= link_to 'Start', course, class: "btn btn-primary pull-right" %>
+                    </div>
+                
+                </div>
+            </div>
+
+              <% end %>
+           
+
+          <br>
+
+         
+
+
+      </div>
+  </div>
+</div>
+
+
