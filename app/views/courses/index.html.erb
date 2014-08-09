@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col-md-8 col-md-offset-2">
        
-        <h1>Lest's startup</h1>
+        <h1 class="color-purple">Let's startup</h1>
 
         <br>
               <% @courses.each do |course| %>
@@ -25,7 +25,7 @@
                         <p class="lead"> <%= course.description %> </p>
                     </div>
                     <div class="panel-footer">
-                       <%= link_to 'Start', course, class: "btn btn-primary pull-right" %>
+                       <%= link_to '< Start >', course, class: "btn btn-lg btn-primary " %>
                     </div>
                 
                 </div>

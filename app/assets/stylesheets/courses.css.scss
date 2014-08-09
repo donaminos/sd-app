@@ -5,7 +5,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 body{
-	background-color:#F3F5F9;
+	background-color:#F6F9F9;
+}
+.color-purple{
+	color:#484073;
 }
 .panel-google-plus {
     position: relative;
@@ -24,31 +27,13 @@ body{
 	 color:#fff;
 	 border-radius: 0px;
 }
-.panel-google-plus > .panel-google-plus-tags > ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
-.panel-google-plus > .panel-google-plus-tags > ul:hover {
-    box-shadow: 0px 0px 3px rgb(0, 0, 0);   
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);   
-}
-.panel-google-plus > .panel-google-plus-tags > ul > li {
-    display: block;
-    right: 0px;
-    width: 0px;
-    padding: 5px 0px 5px 0px;
-    background-color: rgb(245, 245, 245);
-    font-size: 12px;
-    overflow: hidden;
-}
 
 
-.panel-google-plus > .panel-heading,
-.panel-google-plus > .panel-footer {
+.panel-google-plus > .panel-heading {
     background-color: rgb(255, 255, 255);
-    border-width: 0px; 
+    border-width: 1px; 
 }
+
 .panel-google-plus > .panel-heading { 
     padding-bottom: 5px; 
 }
@@ -69,13 +54,22 @@ body{
 }
 
 .panel-google-plus > .panel-footer {
+    background-color: rgb(255, 255, 255);
+    border-width: 0px; 
+}
+.panel-google-plus > .panel-footer {
     font-size: 14px;
     font-weight: 700;
-    min-height: 54px;
+    min-height: 60px;
 }
-.panel-google-plus > .panel-footer > .btn {
-    float: left;
-    margin-right: 8px;
-}
+.btn-primary,
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+color: #fff !important;
+/*background-color: #484073;
+border-color: #403966;*/
+background-color:#13987E;
+border-color:#13987E;
+ border-radius: 2px;
 
+}
 
