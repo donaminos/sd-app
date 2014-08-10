@@ -1,17 +1,16 @@
-
 <!-- begin:copyright -->
 <div class="copyright">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-2 col-xs-2">
-        <a href="#home" class="icon-home"><i class="fa fa-home"></i></a>
+        <a href="<%= root_path %>" class="icon-home"><i class="fa fa-home"></i></a>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-10">
         <ul class="list-inline footer-menu">
-          <li><a href="#service">Service</a></li>
-          <li><a href="#program">Program</a></li>
-          <li><a href="#benefit">Benefit</a></li>
-
+          <li><a href="<%= root_path %>/#service">Service</a></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
         </ul>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-12">

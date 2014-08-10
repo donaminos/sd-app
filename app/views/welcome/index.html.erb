@@ -86,7 +86,7 @@
               <div class="featured-content scroll-ref">
                 <h1><b>Rejoins le mouvement: do it yourself!</b></h1>
                 <br>
-                <a href="#subscribe" class="btn btn-transparent-white btn-lg">Get Started</a>
+                 <%= link_to "Get Started", new_user_registration_path, class: "btn btn-transparent-white btn-lg" %>
               </div>
             </div>
           </div>
@@ -198,8 +198,8 @@
             <div class="col-md-12">
               <div class="featured-content scroll-ref">
                 <h1><b>As-tu connu les trente glorieuses ?!
-                 <br>Veux-tu rater la r&eacute;volution num&eacute;rique ?!</b></h1><br>
-                 <a href="#subscribe" class="btn btn-transparent-white btn-lg">Get Started</a>
+                 <br>Veux-tu rater la r&eacute;volution num&eacute;rique ?!</b></h1><br>      
+                  <%= link_to "Get Started", new_user_registration_path, class: "btn btn-transparent-white btn-lg" %>
                </div>
              </div>
            </div>
@@ -207,58 +207,3 @@
        </div>
        <!-- end:featured-text -->
 
-
-<!-- begin:subscribe -->
-<div class="subscribe" id="subscribe">
-  <div class="container">
-
-    <div class="row">
-      <div class="heading-title">
-        <h2>SIGN UP</h2>
-      </div>
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-8 col-sm-8 col-xs-12 col-md-offset-3 col-sm-offset-2">
-
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
-        <form action="http://startupdecode.us3.list-manage1.com/subscribe/post?u=82c88fc0b30bd6162bbc0208b&amp;id=109bb71f8a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate role="form">
-   
-
-        <div class="mc-field-group form-group col-md-5 col-sm-6 col-xs-12">
-          <label for="mce-FNAME" class="sr-only">First Name </label>
-          <input type="text" value="" name="FNAME" class="form-control input-lg" id="mce-FNAME" placeholder="First Name">
-        </div>
-        <div class="mc-field-group form-group col-md-5 col-sm-6 col-xs-12">
-          <label for="mce-LNAME" class="sr-only">Last Name </label>
-          <input type="text" value="" name="LNAME" class="form-control input-lg" id="mce-LNAME" placeholder="Last Name">
-        </div>
-
-        <div class="mc-field-group form-group col-md-10 col-sm-12 col-xs-12">
-          <label for="mce-EMAIL" class="sr-only">Email Address  <span class="asterisk">*</span>
-        </label>
-          <input type="email" value="" name="EMAIL" class="required email form-control input-lg" id="mce-EMAIL" placeholder="Email Address">
-        </div>
-
-          <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_82c88fc0b30bd6162bbc0208b_109bb71f8a" tabindex="-1" value=""></div>
-            <div class="clear form-group col-md-10 col-sm-12 col-xs-12">
-              <!--<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-subscribe pull-right fa fa-rocket"> -->
-
-               <button type="submit" class="btn btn-lg btn-subscribe pull-right"><i class="fa fa-rocket">&nbsp;</i> Lance-toi</button>
-            </div>
-        </form>
-        </div>
-
-        <!--End mc_embed_signup-->
-
-    </div>
-  </div>
-</div>
-</div>
-<!-- end:subscribe -->
