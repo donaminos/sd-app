@@ -1,12 +1,49 @@
-<h2>Forgot your password?</h2>
+<!-- begin:subscribe -->
+<div class="subscribe" id="subscribe" style="min-height:500px">
+  <div class="container">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="row">
+      <div class="heading-title">
+        <h2>RESET PASSWORD</h2>
+      </div>
+    </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-12 col-md-offset-3 col-sm-offset-2">
+		
+		<%= render "devise/shared/notifications" %>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  	
+  		<%= devise_error_messages! %>
 
-<%= render "devise/shared/links" %>
+
+
+		  <div class="form-group col-md-10 col-sm-12 col-xs-12">
+		  	<%= f.label :email, class: "sr-only" %>
+		  	<%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: "Email" %>
+		  </div>
+
+		  <div class="clear form-group col-md-10 col-sm-12 col-xs-12">
+			
+		  	   <button type="submit" class="btn btn-lg btn-subscribe pull-right">
+					Reset
+		  	   </button>
+		  </div>
+
+
+		  </div>
+		<% end %>
+		
+		
+	
+	</div>
+
+    
+   </div>
+		
+		
+</div>
+</div>
+<!-- end:subscribe -->
+

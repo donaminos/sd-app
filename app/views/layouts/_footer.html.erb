@@ -1,34 +1,46 @@
-<!-- begin:copyright -->
-<div class="copyright">
-  <div class="container">
+<% if user_signed_in? %>
+  <!-- begin:copyright -->
+  <div class="container text-center">
     <div class="row">
-      <div class="col-md-3 col-sm-2 col-xs-2">
-        <a href="<%= root_path %>" class="icon-home"><i class="fa fa-home"></i></a>
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-10">
-        <ul class="list-inline footer-menu">
-          <li><a href="<%= root_path %>/#service">Service</a></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
-        </ul>
-      </div>
-      <div class="col-md-3 col-sm-4 col-xs-12">
-        <ul class="list-inline social-icon">
-          <li><a href="https://twitter.com/StartupDecode" target="blank"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="https://www.facebook.com/StartupDecode" target="blank"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="https://plus.google.com/u/1/102647492508846401173/" target="blank"><i class="fa fa-google-plus"></i></a></li>
-        </ul>
+        &copy; 2014 - StartupDecode
+    </div>
+  </div>
+  <!-- end:copyright -->
+<% else %>
+  <!-- begin:copyright -->
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-xs-2">
+          <a href="<%= root_path %>" class="icon-home"><i class="fa fa-home"></i></a>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-10">
+          <ul class="list-inline footer-menu">
+            <li><a href="<%= root_path %>/#service">Service</a></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <ul class="list-inline social-icon">
+            <li><a href="https://twitter.com/StartupDecode" target="blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/StartupDecode" target="blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://plus.google.com/u/1/102647492508846401173/" target="blank"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- end:copyright -->
+  <!-- end:copyright -->
 
- <!-- Bootstrap core JavaScript
+<% end %>
+
+
+<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript">
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript">
     $(function () {
       $("[rel='tooltip']").tooltip();
     });
