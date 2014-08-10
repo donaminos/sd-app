@@ -22,7 +22,11 @@
 
 <%= render "layouts/header" %>
 
-<div class="main-content margin-navbar-top">
+<% if user_signed_in? %>
+  <div class="main-content margin-navbar-top">
+<% else %>
+  <div class="main-content">
+<% end %>
 	<%= yield %>
 </div>
 
