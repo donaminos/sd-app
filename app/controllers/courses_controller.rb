@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   def show
   end
 
+
   # GET /courses/new
   def new
     @course = Course.new
@@ -69,6 +70,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :description, :order)
+      params.require(:course).permit(:title, :description, :order, :video_id)
     end
 end
