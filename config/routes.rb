@@ -1,7 +1,12 @@
 SdApp::Application.routes.draw do
+  #resources :lessons
+  resources :courses do
+    resources :lessons
+  end
+
   devise_for :users
   get "about" => "welcome#about"
-  resources :courses
+
 
   root "welcome#index"
 

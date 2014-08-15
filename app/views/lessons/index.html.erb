@@ -1,0 +1,48 @@
+
+
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-md-10 col-md-offset-1">
+      
+      <div class="bg-light">
+          <h1><%= @course.title %></h1>
+      <p class="lead">
+       <%= @course.description %>
+     </p> 
+      </div>
+    
+
+
+      
+
+        <table class="table table-striped invoice-table">
+            <thead>
+                <h3>Lessons</h3>
+            </thead>
+            <tbody>
+              <% @lessons.each do |lesson| %>
+                <tr>
+                    <td><%= lesson.order %></td>
+                    <td><%= lesson.title %></td>
+                    <td class="hidden-sm"><%= lesson.description %></td>
+                    <td><%= link_to '', [lesson.course, lesson], class: "fa fa-play btn btn-primary" %></td>
+                  
+                </tr>
+               <% end %>
+
+              
+            </tbody>
+        </table>
+    </div>
+  
+      
+      
+
+    </div>  
+  </div>
+</div>
+
+
+<%= link_to 'New Lesson', new_course_lesson_path %>
