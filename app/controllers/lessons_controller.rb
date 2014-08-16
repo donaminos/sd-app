@@ -1,7 +1,8 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   before_filter :load_course
-  
+  load_and_authorize_resource
+
   # GET /courses/:course_id/lessons
   # GET /lessons.json
   def index
@@ -11,20 +12,20 @@ class LessonsController < ApplicationController
   # GET /courses/:course_id/lessons/1
   # GET /lessons/1.json
   def show
-    @lesson = @course.lessons.find(params[:id])
+  #  @lesson = @course.lessons.find(params[:id])
   end
 
   # GET /lessons/new
   def new
     #@lesson = Lesson.new
-    @lesson = @course.lessons.build
-    authorize! :create, @lesson
+   # @lesson = @course.lessons.build
+   # authorize! :create, @lesson
   end
 
    # GET /courses/:course_id/lessons/:id/edit
   def edit
-    @lesson = @course.lessons.find(params[:id])
-    authorize! :update, @lesson 
+  #  @lesson = @course.lessons.find(params[:id])
+   # authorize! :update, @lesson 
   end
 
   # POST /lessons
