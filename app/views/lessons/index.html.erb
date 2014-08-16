@@ -13,9 +13,9 @@
      </p> 
       </div>
     
-
-
-      
+<% if can? :create, @lesson  %>
+<div class="pull-right"><%= link_to 'New Lesson', new_course_lesson_path, class: "btn btn-info" %></div>
+ <% end %>     
 
         <table class="table table-striped invoice-table">
             <thead>
@@ -28,7 +28,15 @@
                     <td><%= lesson.title %></td>
                     <td class="hidden-sm"><%= lesson.description %></td>
                     <td><%= link_to '', [lesson.course, lesson], class: "fa fa-play btn btn-primary" %></td>
-                  
+                
+                    <% if can? :update, @lesson %>
+                      <td><%= link_to 'Edit', edit_course_lesson_path(lesson.course, lesson) , class: "btn btn-xs btn-warning"%></td>
+                    <% end %>
+                    
+                    <% if can? :delete, @lesson %>
+                      <!-- /posts/:post_id/comments/:id -->
+                      <td><%= link_to 'Destroy', [lesson.course, lesson], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-xs btn-danger" %></td>
+                     <% end %>
                 </tr>
                <% end %>
 
@@ -45,4 +53,4 @@
 </div>
 
 
-<%= link_to 'New Lesson', new_course_lesson_path %>
+

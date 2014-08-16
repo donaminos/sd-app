@@ -23,10 +23,10 @@ class CoursesController < ApplicationController
   def edit
   end
 
-rescue_from ActiveRecord::RecordNotFound do
-  flash[:notice] = 'The object you tried to access does not exist'
-  redirect_to :action => :index #render :not_found   # or e.g. redirect_to :action => :index
-end
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:notice] = 'The object you tried to access does not exist'
+    redirect_to :action => :index #render :not_found   # or e.g. redirect_to :action => :index
+  end
 
   # POST /courses
   # POST /courses.json

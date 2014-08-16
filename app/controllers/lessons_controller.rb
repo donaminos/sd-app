@@ -18,11 +18,13 @@ class LessonsController < ApplicationController
   def new
     #@lesson = Lesson.new
     @lesson = @course.lessons.build
+    authorize! :create, @lesson
   end
 
    # GET /courses/:course_id/lessons/:id/edit
   def edit
     @lesson = @course.lessons.find(params[:id])
+    authorize! :update, @lesson 
   end
 
   # POST /lessons
