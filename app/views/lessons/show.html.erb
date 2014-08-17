@@ -37,31 +37,33 @@
                     </center>
                 </div>
 
-                <!-- train section -->
+          
                 <div class="bhoechie-tab-content">
                   
-                       <div class="pull-right" >
+                    <div class="pull-right" >
                       <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>
                       <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
                     </div>
+                    
                     <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>
                     
-                   
-                  
 
                       <% if @lesson.note %>
                       
                      <%= raw coderay @lesson.note %>
 
                       <% else %>
-                      
-                      <h1 class="fa fa-file-text-o sd-green-color font-size-12em"></h1>
+                      <center>
+                         <h1 class="fa fa-file-text-o sd-green-color font-size-12em"></h1>
                       <h2 class="sd-green-color">Cooming Soon</h2>
+                      </center>
+                      
+                     
 
-                      <% end %>
-              
+                    <% end %>
+              </div>
     
-                <!-- hotel search -->
+               
                 <div class="bhoechie-tab-content">
                      <div class="pull-right" >
                       <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>

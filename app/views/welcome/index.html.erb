@@ -7,21 +7,29 @@
           <div class="item active home-bkg">
             <div class="container">
               <div class="row">
-                <div class="col-md-12">
+               
                   <div class="carousel-content">
-                    <h3 class="animated fadeInUpBig text-center text-black"> 
+                    <div class="col-md-5 col-md-offset-1">
+                    <h3 class="animated fadeInUpBig text-left text-black"> 
                       Apprends à <span class="text900">coder</span> une application web 
-                      <br>avec
+                      avec
                       <span class="text900" style="cursor:pointer;cursor: and;" class="text900" data-toggle="tooltip" data-placement="bottom" title="Langage de programmation populaire, utilis&eacute; par des startups comme twitter, airbnb, grupon..." rel='tooltip'>Ruby on Rails</span>,
 
                       et lance ta <span class="text900">startup</span>.
                     </h3>
-                    <p class="animated rollIn text-black text-center scroll-ref">
-
-                      <br><br> <a href="#service" class="btn btn-transparent-black btn-lg">Learn more</a></p>  
+                   
+                    </div>
                     </div>
 
-                  </div> 
+                    <div class="col-md-5">
+                      <iframe src="//player.vimeo.com/video/103654746" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+                <div class="row text-center" style="margin-top:50px; font-weight:bold">
+                  <%= link_to "I'm ready baby!", new_user_registration_path, class: "btn btn-transparent-black btn-lg" %>
+               
                 </div>
               </div>
             </div>

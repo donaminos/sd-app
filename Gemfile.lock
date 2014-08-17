@@ -13,7 +13,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.2.9)
     actionmailer (4.0.4)
       actionpack (= 4.0.4)
       mail (~> 2.5.4)
@@ -153,7 +152,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
   cancan
