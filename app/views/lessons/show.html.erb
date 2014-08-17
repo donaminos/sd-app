@@ -1,4 +1,4 @@
-<div class="container margin-navbar-top">
+<div class="container margin-navbar-top lesson">
   <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
             
@@ -47,12 +47,19 @@
                     <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>
                     
                    
-                    <center>
+                  
+
+                      <% if @lesson.note %>
+                      
+                     <%= raw coderay @lesson.note %>
+
+                      <% else %>
+                      
                       <h1 class="fa fa-file-text-o sd-green-color font-size-12em"></h1>
                       <h2 class="sd-green-color">Cooming Soon</h2>
-                 
-                    </center>
-                </div>
+
+                      <% end %>
+              
     
                 <!-- hotel search -->
                 <div class="bhoechie-tab-content">
@@ -66,7 +73,7 @@
                       <h1 class="fa fa-code sd-green-color font-size-12em"></h1>
                       <h2 class="sd-green-color">Cooming Soon</h2>
                      
-                    </center>
+                  
                 </div>
                 <div class="bhoechie-tab-content">
                   <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>

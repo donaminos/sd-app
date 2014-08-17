@@ -18,14 +18,14 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     #@lesson = Lesson.new
-   # @lesson = @course.lessons.build
-   # authorize! :create, @lesson
+    @lesson = @course.lessons.build
+  
   end
 
    # GET /courses/:course_id/lessons/:id/edit
   def edit
   #  @lesson = @course.lessons.find(params[:id])
-   # authorize! :update, @lesson 
+   
   end
 
   # POST /lessons
@@ -89,6 +89,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :description, :order, :video_id, :course_id)
+      params.require(:lesson).permit(:title, :description, :order, :video_id, :course_id, :note)
     end
 end

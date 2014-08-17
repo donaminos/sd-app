@@ -35,6 +35,9 @@ gem 'autoprefixer-rails'
 
 gem 'devise', '~> 3.2.4'
 
+gem 'coderay'
+
+
 group :development, :test do
   gem 'sqlite3'
 end
