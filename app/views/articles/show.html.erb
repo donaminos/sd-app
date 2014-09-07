@@ -1,0 +1,63 @@
+<style type="text/css">
+
+.post-header-line { 
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	padding:5px 2px 5px 5px;
+	font-size: 13px; 
+	margin-bottom: 30px;
+}
+
+</style>
+
+
+<div class="container">
+	<div class="row">
+		 <div class="col-md-10 col-md-offset-1 panel panel-google-plus" >
+
+            <div style="padding:50px">
+          
+
+                <!-- First Blog Post -->
+                <h2 class="text-blue">
+                    <%= @article.title %>
+                </h2>
+
+                 	<div class="post-header-line">
+                           
+                            <span class="glyphicon glyphicon-calendar">
+                           
+                            </span><%= @article.created_at %>
+                          
+                         <ul class="list-unstyled list-inline pull-right">
+                         	<li><a href="#" class="btn label label-info"> Snipp </a> </li>
+                         	<li><a href="#" class="btn label label-info"> Dev </a> </li>
+                         	<li><a href="#" class="btn label label-info"> Growth </a> </li>
+                         </ul>
+                             
+
+                             
+                        </div>
+					
+					<div class="">
+                		<p>  <%= raw coderay @article.body %> </p>
+              		</div>
+          
+              </div>
+
+       <%= link_to 'Back', articles_path, class: "btn btn-default" %>       
+  <% if can? :update, @article %>
+                        <%= link_to 'Edit', edit_article_path(@article) , class: "btn btn-warning"%>
+                      <% end %>
+
+                      <% if can? :destroy, @article %>
+                        <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+                      <% end %>
+
+
+            <br><br>
+
+            </div>
+	</div>
+</div>
+

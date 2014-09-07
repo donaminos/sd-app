@@ -1,0 +1,55 @@
+<div class="container margin-navbar-top">
+  <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+       
+       <% if can? :create, @course  %>
+                        <div class="pull-right"><%= link_to 'New article', new_article_path, class: "btn btn-info" %></div>
+               <% end %>    
+
+        <br>  <br>
+              <% @articles.each do |article| %>
+
+                <div class="[ panel panel-default ] panel-google-plus">
+             
+                    <div class="panel-google-plus-tags ">
+                      <span class="alert order-bkg">#Article</span>
+                    </div>
+                    
+                    <div class="panel-heading">
+       
+                        <h2><%= link_to article.title , article %></h2>
+                       
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead"> <%= 
+                        
+                            truncate_html(article.body, length: 400 )
+                              %> 
+                        </p>
+                    </div>
+                    <div class="panel-footer ">
+                       <%= link_to '< Read >', article, class: "btn  btn-primary" %>
+                      <% if can? :update, @article %>
+                        <%= link_to 'Edit', edit_article_path(article) , class: "btn btn-warning"%>
+                      <% end %>
+
+                      <% if can? :destroy, @article %>
+                        <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+                      <% end %>
+                    </div>
+                
+                </div>
+       
+
+              <% end %>
+           
+
+          <br>
+
+         
+
+
+      </div>
+  </div>
+</div>
+

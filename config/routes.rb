@@ -1,4 +1,6 @@
 SdApp::Application.routes.draw do
+  resources :articles
+
   #resources :lessons
   resources :courses do
     resources :lessons
