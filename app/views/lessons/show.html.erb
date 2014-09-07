@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10 bhoechie-tab">
-                <!-- flight section -->
+              
                 <div class="bhoechie-tab-content active">
               
                    
@@ -27,12 +27,12 @@
                       <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>
                       <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
                     </div>
-                     <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>
+                     <h2>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.description %></h2>
          
 
                     <center>
                      <div class="embed-responsive">
-                       <iframe src="//player.vimeo.com/video/<%= @lesson.video_id %>" width="100%" height="500px" ></iframe>
+                       <iframe src="//player.vimeo.com/video/<%= @lesson.video_id %>" width="960" height="540px" ></iframe>
                    </div>
                     </center>
                 </div>
@@ -45,7 +45,7 @@
                       <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
                     </div>
                     
-                    <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>
+                    <h2>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.description %></h2>
                     
 
                       <% if @lesson.note %>
@@ -69,7 +69,7 @@
                       <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>
                       <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
                     </div>
-                  <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>
+                  <h2>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.description %></h2>
                     <center>
                       
                       <h1 class="fa fa-code sd-green-color font-size-12em"></h1>
@@ -91,6 +91,7 @@
         </div>
   </div>
 </div>
+
 
 <script type="text/javascript">
   
