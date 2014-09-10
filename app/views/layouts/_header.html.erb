@@ -18,12 +18,21 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 
+              <% if request.original_url.to_s.include? "courses" %>
+                <li class="active">   <% else %>  <li>
+              <% end %> 
+                <%= link_to "Courses", courses_path %>
+              </li>
 
-            <li><%= link_to "Courses", courses_path %></li>
-            <li><%= link_to "Articles", articles_path %></li>
+               <% if request.original_url.to_s.include? "articles" %>
+                <li class="active">   <% else %>  <li>
+              <% end %> 
+            <%= link_to "Articles", articles_path %></li>
              
-
-         <li class="dropdown">
+      
+      <% if request.original_url.to_s.include? "users" %>
+                <li class="dropdown active">   <% else %>   <li class="dropdown">
+              <% end %> 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile</a>
             
             <ul class="dropdown-menu">
@@ -62,13 +71,58 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 
+              <% if request.original_url ==  root_path %>
+              <li class="active">
+              <% else %>
+                <li>
+              <% end %> 
+              <%= link_to "Service", root_path %>
+            </li>
 
-             <li><%= link_to "Service", root_path %></li>
-             <li><%= link_to "About", about_path %></li>
-             <li><%= link_to "Register", new_user_registration_path %></li>
-              <li><%= link_to "Login", new_user_session_path %></li>
+              <% if request.original_url.to_s.include? "about" %>
+              <li class="active">
+              <% else %>
+                <li>
+              <% end %> 
+              <%= link_to "About", about_path %>
+            </li>
+
+
+              <% if request.original_url.to_s.include? "courses" %>
+              <li class="active">
+              <% else %>
+                <li>
+              <% end %> 
+              <%= link_to "Courses", courses_path %>
+            </li>
+
+              <% if request.original_url.to_s.include? "articles" %>
+                <li class="active">
+              <% else %>
+                <li>
+              <% end %> 
+                <%= link_to "Articles", articles_path %>
+              </li>
+              
+              <% if request.original_url.to_s.include? "sign_in" %>
+                <li class="active">
+                  <% else %>
+                    <li>
+                  <% end %> 
+                <%= link_to "Login", new_user_session_path %>
+              </li>
+
+              <% if request.original_url.to_s.include? "sign_up" %>
+                <li class="active">
+              <% else %>
+                <li>
+              <% end %> 
+                
+              </li>
+               <%= link_to "Register", new_user_registration_path, class: "btn btn-sm btn-success pull-right", style: "margin-top:20px" %>
 
            </ul>
+          
          </div><!-- /.navbar-collapse -->
 
        </div>

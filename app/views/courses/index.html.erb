@@ -9,26 +9,29 @@
         <br>
               <% @courses.each do |course| %>
 
-              
-
-               <div class="">
-                <div class="[ panel panel-default ] panel-google-plus">
+                <div class="panel panel-default panel-sd">
              
-                    <div class="panel-google-plus-tags ">
-                      <span class="alert order-bkg">#Course</span>
+                    <div class="panel-sd-tags ">
+                      <span class="alert panel-tag-bkg tag-bkg-primary">#DEV</span>
                     </div>
                     
                     <div class="panel-heading">
                      
-                      
-                        <h2><%= course.title %></h2>
+                        <h2><%= link_to course.title, course_lessons_path(course) %></h2>
                        
                     </div>
                     <div class="panel-body">
                         <p class="lead"> <%= course.description %> </p>
                     </div>
                     <div class="panel-footer">
-                       <%= link_to '< Start >', course_lessons_path(course), class: "btn btn-lg btn-primary " %>
+                       
+                      <% if user_signed_in? %>
+                       <%= link_to '< Start >', course_lessons_path(course), class: "btn btn-primary " %>
+                       <% else %>
+                         <%= link_to '< Start >', course, class: "btn btn-primary " %>
+                       <% end %>
+
+
                       <% if can? :update, @course %>
                         <%= link_to 'Edit', edit_course_path(course) , class: "btn btn-warning"%>
                       <% end %>
@@ -39,7 +42,7 @@
                     </div>
                 
                 </div>
-            </div>
+        
 
               <% end %>
            

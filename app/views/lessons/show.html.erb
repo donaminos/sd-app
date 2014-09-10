@@ -1,109 +1,90 @@
-<div class="container margin-navbar-top lesson">
+
+<div class="container margin-navbar-top">
   <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
-            
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 bhoechie-tab-menu">
-              <div class="list-group">
-                <a href="#" class="list-group-item active text-center">
-                  <h4 class="fa fa-youtube-play"></h4><br/>Course
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="fa fa-file-text-o"></h4><br/>Notes
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="fa fa-code"></h4><br/>Sources
-                </a>
+
+    <div class="panel panel-default panel-default panel-sd panel-course-detail">
              
-           
-              </div>
-            </div>
-
-            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10 bhoechie-tab">
-              
-                <div class="bhoechie-tab-content active">
-              
-                   
-                    <div class="pull-right" >
-                      <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>
-                      <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
-                    </div>
-                     <h2>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.description %></h2>
-         
-
-                    <center>
-                     <div class="embed-responsive">
-                       <iframe src="//player.vimeo.com/video/<%= @lesson.video_id %>" width="960" height="540px" ></iframe>
-                   </div>
-                    </center>
-                </div>
-
-          
-                <div class="bhoechie-tab-content">
+                
+                    
+                    <div class="panel-heading text-center" style="">
+                     
+                        <h2 class="text-blue"><%= @lesson.course.title %></h2>
+             
+      
+                     <% if can? :create, @lesson  %>
+                  <%= link_to 'New Lesson', new_course_lesson_path, class: "btn btn-xs btn-info" %>
+                 <% end %>           
+                
+                    <% if can? :update, @lesson %>
+                      <%= link_to 'Edit', edit_course_lesson_path(@lesson.course, @lesson) , class: "btn btn-xs btn-warning"%>
+                    <% end %>
+                    
+                    <% if can? :delete, @lesson %>
+                      <!-- /posts/:post_id/comments/:id -->
+                      <%= link_to 'Destroy', [@lesson.course, @lesson], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-xs btn-danger" %>
+                     <% end %>
                   
-                    <div class="pull-right" >
-                      <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>
-                      <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
-                    </div>
-                    
-                    <h2>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.description %></h2>
-                    
 
-                      <% if @lesson.note %>
+                    </div>
+                    <div class="panel-body">
+                       
+
+                        <div class="col-md-3 lessons-menu bhoechie-tab-menu">
+                        
                       
-                     <%= raw coderay @lesson.note %>
+                              <div class="list-group">
+
+    <%= link_to '00 - A propos du cours' , course_lessons_path(@course), class: "list-group-item" %>
+
+                          <% @lesson.course.lessons.each do |lesson| %>
+                        
+                               <% if lesson.id == @lesson.id %>
+
+                                <%= link_to lesson.description , [lesson.course, lesson], class: "list-group-item active" %>
+                            
+                            <% else %>
+                                
+                                <%= link_to lesson.description , [lesson.course, lesson], class: "list-group-item" %>
+
+                             <% end -%>
+
+                          <% end -%>
+
+                              
+                             
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-9 lesson-content">
+                            <div class="text-center" style="background-color:black; width:100%;padding:20px;">
+                              <div class="embed-responsive">
+
+                               <iframe src="//player.vimeo.com/video/<%= @lesson.video_id %>" width="720" height="400px" frameborder="0" ></iframe>
+                           </div>
+                            </div>
+
+                   <div class="lesson-note">
+                      <% if @lesson.note != "" %>
+
+                        <h3 class="fa fa-file-text-o sd-green-color"> Notes:</h3>
+                         <%= raw coderay @lesson.note %>
 
                       <% else %>
-                      <center>
-                         <h1 class="fa fa-file-text-o sd-green-color font-size-12em"></h1>
-                      <h2 class="sd-green-color">Cooming Soon</h2>
-                      </center>
+                  
+                         <h3 class="fa fa-file-text-o sd-green-color"> Notes:</h3>
+                      <p class="lead"> Cooming Soon...</p>
+                    </div>
                       
                      
 
                     <% end %>
-              </div>
-    
-               
-                <div class="bhoechie-tab-content">
-                     <div class="pull-right" >
-                      <%= link_to '', course_lessons_path(@lesson.course), class: "fa fa-backward btn btn-default " %>
-                      <%= link_to '', course_lessons_path(@lesson.course), class: " fa fa-forward btn btn-primary " %>
+
+                        </div>
+
                     </div>
-                  <h2>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.description %></h2>
-                    <center>
-                      
-                      <h1 class="fa fa-code sd-green-color font-size-12em"></h1>
-                      <h2 class="sd-green-color">Cooming Soon</h2>
-                     
-                  
-                </div>
-                <div class="bhoechie-tab-content">
-                  <h1>#<%= @lesson.order %>&nbsp;-&nbsp;<%= @lesson.title %></h1>
-                    <center>
-                      
-                      <h1 class="fa fa-comments sd-green-color font-size-12em" ></h1>
-                      <h2 class="sd-green-color">Cooming Soon</h2>
-                   
-                    </center>
-                </div>
-             
-            </div>
-        </div>
+                
+      </div>
+
   </div>
 </div>
-
-
-<script type="text/javascript">
-  
-$(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-});
-
-</script>

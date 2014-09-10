@@ -12,7 +12,35 @@ border: solid 1px #e5e5e5;
 	padding-right:30px !important;
 }
 
-.lesson {
- /* color: #2c3e50;	*/
-  color: #212834;
+
+.panel-course-detail .panel-body{
+  padding: 0px !important;
+}
+  .panel-course-detail .lessons-menu{
+    padding: 0px !important;
+   
+    height: 100% !important;
+  }
+  .lessons-menu ul li{
+    padding: 10px 15px;
+     border-bottom: 1px solid #f0f0f0;
+  }
+  .lesson-content{
+    padding: 0 !important;
+     
+      height: 100% !important;
+  }
+
+  .lesson-note{
+    border-left: 1px solid #f0f0f0;
+    padding: 20px;
+  
+  }
+
+
+.list-group-item{
+  border-radius: 0 !important;
+  border-left: none !important;
+   border-right: none !important;
+  border-top: none !important;
 }

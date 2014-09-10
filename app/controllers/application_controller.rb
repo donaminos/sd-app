@@ -8,7 +8,10 @@ class ApplicationController < ActionController::Base
   #end
 
  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url
+	
+     redirect_to root_url if exception.subject.to_s.include? "Course"
+     redirect_to articles_path if exception.subject.to_s.include? "Article"
+ 
   end
 
 end

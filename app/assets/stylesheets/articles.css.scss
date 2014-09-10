@@ -1,3 +1,17 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-container{
+	padding:50px 100px;
+}
+.post-content{
+	margin-bottom:70px;
+}
+.post-header-line { 
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	padding:5px 2px 5px 5px;
+	font-size: 14px; 
+	margin-bottom: 30px;
+}

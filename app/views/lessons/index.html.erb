@@ -1,56 +1,60 @@
 
-
-<div class="container ">
+<div class="container">
   <div class="row">
 
-
-    <div class="col-md-10 col-md-offset-1">
-      
-      <div class="bg-light">
-          <h1><%= @course.title %></h1>
-      <p class="lead">
-       <%= @course.description %>
-     </p> 
-      </div>
-    
-<% if can? :create, @lesson  %>
-  <div class="pull-right"><%= link_to 'New Lesson', new_course_lesson_path, class: "btn btn-info" %></div>
- <% end %>     
-
-        <table class="table table-striped invoice-table">
-            <thead>
-                <h3>Table of Contents</h3>
-            </thead>
-            <tbody>
-              <% @lessons.each do |lesson| %>
-                <tr>
-                    <td><%= lesson.order %></td>
-               
-                    <td class="hidden-sm"><%= lesson.description %></td>
-                    <td><%= link_to '', [lesson.course, lesson], class: "fa fa-play btn btn-primary" %></td>
+    <div class="panel panel-default panel-default panel-sd panel-course-detail">
+             
                 
-                    <% if can? :update, @lesson %>
-                      <td><%= link_to 'Edit', edit_course_lesson_path(lesson.course, lesson) , class: "btn btn-xs btn-warning"%></td>
-                    <% end %>
                     
-                    <% if can? :delete, @lesson %>
-                      <!-- /posts/:post_id/comments/:id -->
-                      <td><%= link_to 'Destroy', [lesson.course, lesson], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-xs btn-danger" %></td>
-                     <% end %>
-                </tr>
-               <% end %>
+                    <div class="panel-heading text-center" style="">
+                     
+                        <h2 class="text-blue"><%= @course.title %></h2>
+                    
+                    </div>
+                    <div class="panel-body">
+                       
 
+                        <div class="col-md-3 lessons-menu bhoechie-tab-menu">
+                        
+                      
+                              <div class="list-group">
+                              <%= link_to '00 - A propos du cours' , course_lessons_path(@course), class: "list-group-item active" %>
+
+                          <% @lessons.each do |lesson| %>
+                        
+                          
+                                
+                                <%= link_to lesson.description , [lesson.course, lesson], class: "list-group-item" %>
+
+                           
+
+                          <% end -%>
+
+                              
+                             
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-9 lesson-content">
+                          
+
+                      <div class="lesson-note">
+                        <h3 class="fa fa-info-circle sd-green-color"> A propos de ce cours:</h3>
+                        
+                          <p class="lead">
+                            <%= @course.description %>
+                          </p>
+                    
+                      
               
-            </tbody>
-        </table>
-    </div>
-  
-      
-      
 
-    </div>  
+                        </div>
+
+                    </div>
+                
+      </div>
+
   </div>
 </div>
-
-
 

@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
+  before_filter :authenticate_user!, :load_course
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_filter :load_course
   load_and_authorize_resource
 
   # GET /courses/:course_id/lessons
