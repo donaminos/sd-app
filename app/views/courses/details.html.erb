@@ -18,9 +18,9 @@
                         
                       
                               <div class="list-group">
-                              <%= link_to '00 - A propos' , course_lessons_path(@course), class: "list-group-item active" %>
+                              <%= link_to '00 - A propos du cours' , course_lessons_path(@course), class: "list-group-item active" %>
 
-                          <% @lessons.each do |lesson| %>
+                          <% @course.lessons.each do |lesson| %>
                         
                           
                                 

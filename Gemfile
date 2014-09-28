@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'turnout'
-gem 'cancan'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -38,6 +38,8 @@ gem 'devise', '~> 3.2.4'
 gem 'coderay'
 
 gem 'truncate_html'
+
+gem "pundit"
 
 group :development, :test do
   gem 'sqlite3'

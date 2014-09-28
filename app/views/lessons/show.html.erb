@@ -11,18 +11,16 @@
                         <h2 class="text-blue"><%= @lesson.course.title %></h2>
              
       
-                     <% if can? :create, @lesson  %>
+                   
                   <%= link_to 'New Lesson', new_course_lesson_path, class: "btn btn-xs btn-info" %>
-                 <% end %>           
+                       
                 
-                    <% if can? :update, @lesson %>
+                   
                       <%= link_to 'Edit', edit_course_lesson_path(@lesson.course, @lesson) , class: "btn btn-xs btn-warning"%>
-                    <% end %>
-                    
-                    <% if can? :delete, @lesson %>
-                      <!-- /posts/:post_id/comments/:id -->
+                   
+              
                       <%= link_to 'Destroy', [@lesson.course, @lesson], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-xs btn-danger" %>
-                     <% end %>
+                 
                   
 
                     </div>
@@ -65,7 +63,7 @@
                             </div>
 
                    <div class="lesson-note">
-                      <% if @lesson.note != "" %>
+                      <% if @lesson.note && @lesson.note != "" %>
 
                         <h3 class="fa fa-file-text-o sd-green-color"> Notes:</h3>
                          <%= raw coderay @lesson.note %>

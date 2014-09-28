@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  
   # GET /courses
   # GET /courses.json
   def index
@@ -11,6 +11,11 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+     if signed_in?
+      render 'details'
+    else
+      render 'show'
+    end
   end
 
 

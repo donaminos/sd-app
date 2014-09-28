@@ -32,13 +32,11 @@
 
 
     <%= link_to 'Back', articles_path, class: "btn btn-default" %>       
-    <% if can? :update, @article %>
+ 
     <%= link_to 'Edit', edit_article_path(@article) , class: "btn btn-warning"%>
-    <% end %>
-
-    <% if can? :destroy, @article %>
+ 
     <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
-    <% end %>
+  
 
   </div>
 </div>
