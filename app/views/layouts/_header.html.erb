@@ -79,13 +79,7 @@
               <%= link_to "Service", root_path %>
             </li>
 
-              <% if request.original_url.to_s.include? "about" %>
-              <li class="active">
-              <% else %>
-                <li>
-              <% end %> 
-              <%= link_to "About", about_path %>
-            </li>
+            
 
 
               <% if request.original_url.to_s.include? "courses" %>

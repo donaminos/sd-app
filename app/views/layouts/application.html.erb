@@ -22,7 +22,7 @@
 
 <%= render "layouts/header" %>
 
-<% if user_signed_in? or request.original_url.to_s.include? "courses" or request.original_url.to_s.include? "articles" %>
+<% if request.original_url.to_s.include? "courses" or request.original_url.to_s.include? "articles" or request.original_url.to_s.include? "terms" %>
   <div class="main-content margin-navbar-top">
 
     <% if notice %>

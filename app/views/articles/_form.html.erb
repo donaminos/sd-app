@@ -1,6 +1,9 @@
 <div class="container">
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-offset-1 col-md-10">
+
+<div class="panel panel-default">
+  <div class="panel-body">
 
         <%= form_for(@article, :html => {:class => "form"}) do |f| %>
           <% if @article.errors.any? %>
@@ -14,24 +17,28 @@
               </ul>
             </div>
           <% end %>
+           <div class=" pull-right">
+            <%= f.submit 'Save' , :class => 'btn btn-success btn-lg' %>
+          </div>
+          <br><br>
 
-          <div class="field">
+          <div class="form-group">
             <%= f.label :title %><br>
             <%= f.text_field :title, class: "form-control" %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :body %><br>
-            <%= f.text_area :body, class: "form-control" %>
+            <%= f.text_area :body, :size => "30x30", class: "form-control" %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :published_at %><br>
             <%= f.datetime_select :published_at, class: "form-control" %>
           </div>
-          <div class="actions">
-            <%= f.submit %>
-          </div>
+         
         <% end %>
-
+    
+  </div>
+</div>
   
     </div>
   </div>

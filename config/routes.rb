@@ -8,7 +8,7 @@ SdApp::Application.routes.draw do
 
   devise_for :users
   get "about" => "welcome#about"
-
+  get "terms" => "welcome#terms"
 
   root "welcome#index"
   

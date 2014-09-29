@@ -1,10 +1,10 @@
-class CoursePolicy < ApplicationPolicy
+class LessonPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
     end
   end
-
+  
   def index?
     true
   end
@@ -12,6 +12,5 @@ class CoursePolicy < ApplicationPolicy
   def show?
     true
   end
-
 
 end

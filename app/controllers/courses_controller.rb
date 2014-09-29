@@ -1,16 +1,18 @@
 class CoursesController < ApplicationController
 
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  
+  after_action :verify_authorized
   # GET /courses
   # GET /courses.json
   def index
     @courses = Course.all
+    authorize @courses
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    authorize @course
      if signed_in?
       render 'details'
     else
@@ -22,22 +24,20 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    authorize @course
   end
 
   # GET /courses/1/edit
   def edit
+    authorize @course
   end
 
-  rescue_from ActiveRecord::RecordNotFound do
-    flash[:notice] = 'The object you tried to access does not exist'
-    redirect_to :action => :index #render :not_found   # or e.g. redirect_to :action => :index
-  end
 
   # POST /courses
   # POST /courses.json
   def create
     @course = Course.new(course_params)
-
+    authorize @course
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
@@ -52,6 +52,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    authorize @course
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
@@ -66,6 +67,7 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
+    authorize @course
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url }
@@ -74,6 +76,7 @@ class CoursesController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])

@@ -6,6 +6,11 @@ class ApplicationPolicy
     @record = record
   end
 
+  def isadmin
+    @user ||= User.new # guest user (not logged in)
+    @user.admin?
+  end
+
   def index?
     false
   end
@@ -15,7 +20,8 @@ class ApplicationPolicy
   end
 
   def create?
-    false
+    #false
+    isadmin
   end
 
   def new?
@@ -23,7 +29,8 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    #false
+    isadmin
   end
 
   def edit?
@@ -31,7 +38,8 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    #false
+    isadmin
   end
 
   def scope

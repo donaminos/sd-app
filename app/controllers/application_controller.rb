@@ -1,18 +1,34 @@
 class ApplicationController < ActionController::Base
-   include Pundit
+  include Pundit
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+ # Verify that controller actions are authorized. Optional, but good.
+  #after_filter :verify_authorized,  except: :index
+  #after_filter :verify_policy_scoped, only: :index
 
   #def after_sign_in_path_for(resource)
   #	courses_path
   #end
 
- rescue_from Pundit::NotAuthorizedError do |exception|
-	
-     redirect_to root_url if exception.subject.to_s.include? "Course"
-     redirect_to articles_path if exception.subject.to_s.include? "Article"
- 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_exists
+  
+  
+
+  private
+  
+  def user_not_authorized(exception)
+
+    policy_name = exception.policy.class.to_s
+    flash[:alert] = "Hmm! something went wrong."
+    redirect_to (request.referrer || root_path)
   end
 
+  def record_not_exists(exception)
+    flash[:alert] = 'Hmm! something went wrong.'
+    redirect_to (request.referrer || root_path)
+  end
 end

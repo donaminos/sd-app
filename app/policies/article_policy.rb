@@ -1,4 +1,4 @@
-class CoursePolicy < ApplicationPolicy
+class ArticlePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
@@ -12,6 +12,5 @@ class CoursePolicy < ApplicationPolicy
   def show?
     true
   end
-
-
+  
 end
