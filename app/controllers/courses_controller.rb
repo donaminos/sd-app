@@ -14,9 +14,7 @@ class CoursesController < ApplicationController
   def show
     authorize @course
      if signed_in?
-      render 'details'
-    else
-      render 'show'
+      redirect_to course_lessons_path(@course)
     end
   end
 
@@ -79,7 +77,7 @@ class CoursesController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      @course = Course.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

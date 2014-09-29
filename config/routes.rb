@@ -7,6 +7,7 @@ SdApp::Application.routes.draw do
   end
 
   devise_for :users
+  
   get "about" => "welcome#about"
   get "terms" => "welcome#terms"
 

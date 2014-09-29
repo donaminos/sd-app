@@ -41,6 +41,8 @@ gem 'truncate_html'
 
 gem "pundit"
 
+gem 'friendly_id', '~> 5.0.0'
+
 group :development, :test do
   gem 'sqlite3'
 end

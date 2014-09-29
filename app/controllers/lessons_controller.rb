@@ -51,7 +51,7 @@ class LessonsController < ApplicationController
   # PATCH/PUT /lessons/1.json
   def update
     
-    @lesson = @course.lessons.find(params[:id])
+    @lesson = @course.lessons.friendly.find(params[:id])
     authorize @lesson
     respond_to do |format|
       if @lesson.update(lesson_params)
@@ -68,7 +68,7 @@ class LessonsController < ApplicationController
   # DELETE /courses/:course_id/lessons/1.xml
   def destroy
     
-    @lesson = @course.lessons.find(params[:id])
+    @lesson = @course.lessons.friendly.find(params[:id])
     authorize @lesson
     @lesson.destroy
     respond_to do |format|
@@ -82,11 +82,11 @@ class LessonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       #@lesson = Lesson.find(params[:id])
-      @lesson = Lesson.find(params[:id])
+      @lesson = Lesson.friendly.find(params[:id])
     end
 
     def load_course
-      @course = Course.find(params[:course_id])
+      @course = Course.friendly.find(params[:course_id])
    end
 
     # Never trust parameters from the scary internet, only allow the white list through.

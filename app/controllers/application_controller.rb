@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
   #	courses_path
   #end
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+ # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_exists
+  #rescue_from ActiveRecord::RecordNotFound, with: :record_not_exists
   
   
 
