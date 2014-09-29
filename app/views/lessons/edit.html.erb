@@ -1,6 +1,17 @@
-<h1>Editing lesson</h1>
 
-<%= render 'form' %>
+		
 
-<%= link_to 'Show', [@lesson.course, @lesson] %> |
-<%= link_to 'Back', course_lessons_path %>
+		<h1>Editing lesson</h1>
+
+		<%= render 'form' %>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<%= link_to 'Show', [@lesson.course, @lesson], class: "btn btn-info" %>
+				<%= link_to 'Back', course_lessons_path, class: "btn btn-default" %>
+				</div>
+				
+			</div>
+		</div>
+

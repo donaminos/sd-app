@@ -2,5 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+<div class="container">
+	<div class="row">
+		<%= link_to 'Show', @course, class: "btn btn-info" %> 
+		<%= link_to 'Back', courses_path, class: "btn btn-default" %>
+	</div>
+</div>
+

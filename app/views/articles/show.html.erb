@@ -15,14 +15,6 @@
 
       </span><%= @article.created_at %>
 
-      <ul class="list-unstyled list-inline pull-right">
-        <li><a href="#" class="btn label label-info"> Snipp </a> </li>
-        <li><a href="#" class="btn label label-info"> Dev </a> </li>
-        <li><a href="#" class="btn label label-info"> Growth </a> </li>
-      </ul>
-
-
-
     </div>
 
     <div class="post-content text-justify">
@@ -33,10 +25,11 @@
 
     <%= link_to 'Back', articles_path, class: "btn btn-default" %>       
  
-    <%= link_to 'Edit', edit_article_path(@article) , class: "btn btn-warning"%>
+    <% if policy(@article).update? %>
+      <%= link_to 'Edit', edit_article_path(@article) , class: "btn btn-warning"%>
  
-    <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
-  
+      <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+    <% end %>
 
   </div>
 </div>

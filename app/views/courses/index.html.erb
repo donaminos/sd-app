@@ -1,57 +1,59 @@
 <div class="container margin-navbar-top">
   <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-       
-                        <div class="pull-right"><%= link_to 'New course', new_course_path, class: "btn btn-info" %></div>
-                          
-        <h1 class="text-black">Let's startup</h1>
+    <div class="col-md-8 col-md-offset-2">
+      <% if policy(@courses).create? %>
+     <div class="pull-right"><%= link_to 'New course', new_course_path, class: "btn btn-info" %></div>
+     <% end %>
+     <h1 class="">Courses</h1>
 
-        <br>
-              <% @courses.each do |course| %>
+     <br>
+     <% @courses.each do |course| %>
 
-                <div class="panel panel-default panel-sd">
-             
-                    <div class="panel-sd-tags ">
-                      <span class="alert panel-tag-bkg tag-bkg-primary">#DEV</span>
-                    </div>
-                    
-                    <div class="panel-heading">
-                     
-                        <h2><%= link_to course.title, course_lessons_path(course) %></h2>
-                       
-                    </div>
-                    <div class="panel-body">
-                        <p class="lead"> <%= course.description %> </p>
-                    </div>
-                    <div class="panel-footer">
-                       
-                  
-                    <%= link_to '< Start >', course, class: "btn btn-primary " %>
-                   
+     <div class="panel panel-default panel-sd">
 
+      <div class="panel-sd-tags ">
+        <span class="alert panel-tag-bkg tag-bkg-primary">#DEV</span>
+      </div>
 
-                   
-                        <%= link_to 'Edit', edit_course_path(course) , class: "btn btn-warning"%>
-                  
-
-                  
-                        <%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
-                   
-                    </div>
-                
-                </div>
-        
-
-              <% end %>
-           
-
-          <br>
-
-         
-
+      <div class="panel-heading">
+      <% if user_signed_in? %>
+        <h2><%= link_to course.title, course_lessons_path(course) %></h2>
+      <% else %>
+        <h2><%= link_to course.title, course %></h2>
+      <% end %>
 
       </div>
+      <div class="panel-body">
+        <p class="lead"> <%= course.description %> </p>
+      </div>
+      <div class="panel-footer">
+
+<% if user_signed_in? %>
+  <%= link_to '< Start >', course_lessons_path(course), class: "btn btn-primary" %>
+<% else %>
+  <%= link_to '< Start >', course, class: "btn btn-primary" %>
+<% end %>
+         <% if policy(course).update? %>
+
+        <%= link_to 'Edit', edit_course_path(course) , class: "btn btn-warning"%>
+
+        <%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+
+    </div>
+
+
+    <% end %>
+
+
+    <br>
+
+
+
+
   </div>
+</div>
 </div>
 
 

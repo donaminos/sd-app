@@ -32,13 +32,10 @@
       </div>
     </div>
 
-
-    <%= link_to 'Edit', edit_course_path(@course) , class: "btn btn-warning"%>
-
-
-    
-    <%= link_to 'Destroy', @course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
-
+    <% if policy(@course).update? %>
+      <%= link_to 'Edit', edit_course_path(@course) , class: "btn btn-warning"%> 
+      <%= link_to 'Destroy', @course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+    <% end %>
 
   </div>
 </div>
