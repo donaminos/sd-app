@@ -1,46 +1,89 @@
 <div class="container">
-  <div class="col-md-10 col-md-offset-1">
-
-    <div class="panel panel-default">
-  <div class="panel-body">
+  <div class="row">
 
 
-<%= form_for(@course, :html => {:class => "form"}) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+    <div class="col-md-7">
 
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+
+          <%= form_for(@course, :html => {:class => "form"}) do |f| %>
+          <% if @course.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+            <ul>
+              <% @course.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+
+          <div class="field form-group">
+            <%= f.label :title  %><br>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :description %><br>
+            <%= f.text_area :description, class: "form-control"  %>
+          </div>
+           <div class="form-group">
+            <%= f.label :introduction %><br>
+            <%= f.text_area :introduction, :size => "30x30", class: "form-control" %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :order %><br>
+            <%= f.number_field :order, class: "form-control"  %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :video_id  %><br>
+            <%= f.text_field :video_id , class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :slug %><br>
+            <%= f.text_field :slug, class: "form-control" %>
+          </div>
+          <div class="actions form-group">
+            <%= f.submit %>
+          </div>
+          <% end %>
+
+        </div>
+
+      </div>
     </div>
-  <% end %>
 
-  <div class="field form-group">
-    <%= f.label :title  %><br>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control"  %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :order %><br>
-    <%= f.number_field :order, class: "form-control"  %>
-  </div>
-    <div class="field form-group">
-    <%= f.label :video_id  %><br>
-    <%= f.text_field :video_id , class: "form-control" %>
-  </div>
-  <div class="actions form-group">
-    <%= f.submit %>
-  </div>
-<% end %>
-  
-   </div>
-   
+
+
+    <div class="col-md-5">
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2>Lessons</h2>
+          <table class="table table-stripped">
+
+           <% @course.lessons.each do |lesson| %>
+
+
+           
+
+           <tr>
+            <td><%= lesson.order %></td>
+            <td><%= lesson.title %></td>
+            <td><%= lesson.description %></td>
+          </tr>
+
+          <% end -%>
+
+
+        </table>
+      </div>
     </div>
   </div>
+
+
+
+</div>
 </div>

@@ -3,34 +3,21 @@
 
 <div class="container">
   <div class="row">
-   <div class="col-md-10 col-md-offset-1 panel panel-default" style="padding:50px; min-height:550px">
+   <div class="col-md-10 col-md-offset-1 panel panel-default post-container" >
 
-      <div class="row">
-        
-          <div class="col-md-6 text-justify">
+         
             <h1 class="text-blue"><%= @course.title %></h1>
             
-            <p>
-              <%= raw coderay @course.description %>
-            </p>
+            <div class="course-introduction">
+              <% if not @course.introduction.blank? %>
+              <%= raw coderay @course.introduction %>
+              <% end %>
+            </div>
         
-        </div>
-
-        <div class="col-md-6 ">
-              <div class="responsive-video pull-right">
-                  <iframe src="http://player.vimeo.com/video/103654746" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen
-                  width="380px" height="220px"></iframe> 
-              </div>
-          </div>
-
-      </div>
-    
-    <div class="row">
-      <div class="col-md-12">   
+     
         <%= link_to 'Back', courses_path, class: "btn btn-default" %> 
         <%= link_to "Enroll", new_user_registration_path, class: "btn btn-success" %>
-      </div>
-    </div>
+      
 
     <% if policy(@course).update? %>
       <%= link_to 'Edit', edit_course_path(@course) , class: "btn btn-warning"%> 
