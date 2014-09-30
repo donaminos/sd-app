@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930130559) do
+ActiveRecord::Schema.define(version: 20140930172749) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140930130559) do
     t.datetime "updated_at"
     t.string   "video_id"
     t.string   "slug"
-    t.string   "introduction"
+    t.text     "introduction", limit: 255
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug"
