@@ -24,10 +24,7 @@
                 <%= link_to "Courses", courses_path %>
               </li>
 
-               <% if request.original_url.to_s.include? "articles" %>
-                <li class="active">   <% else %>  <li>
-              <% end %> 
-            <%= link_to "Articles", articles_path %></li>
+            
              
       
       <% if request.original_url.to_s.include? "users" %>
@@ -90,13 +87,7 @@
               <%= link_to "Courses", courses_path %>
             </li>
 
-              <% if request.original_url.to_s.include? "articles" %>
-                <li class="active">
-              <% else %>
-                <li>
-              <% end %> 
-                <%= link_to "Articles", articles_path %>
-              </li>
+          
               
               <% if request.original_url.to_s.include? "sign_in" %>
                 <li class="active">
