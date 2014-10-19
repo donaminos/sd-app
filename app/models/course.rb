@@ -8,8 +8,9 @@ class Course < ActiveRecord::Base
   def slug_candidates
     [
       :title,
-      [:title, :description],
-      [:title, :description, :created_at]
+      [:title, :created_at]
+      #[:title, :description],
+      #[:title, :description, :created_at]
       
     ]
   end
