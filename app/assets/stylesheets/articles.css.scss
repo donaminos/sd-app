@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post-container{
-	padding:50px 100px;
+	padding:50px;
 }
 .post-content{
 	margin-bottom:70px;
@@ -14,4 +14,60 @@
 	padding:5px 2px 5px 5px;
 	font-size: 14px; 
 	margin-bottom: 30px;
+}
+.sidebar-wrapper{
+	padding:10px;
+}
+.sidebar-header{
+	font-size: 18px;
+	border-bottom:1px solid #DDD;
+	padding:5px ;
+	margin-bottom:10px;
+}
+.sidebar-content{
+
+}
+
+.btn-follow {
+  font-size: 20px;
+  color:white
+
+}
+.btn-follow:hover {
+  color:white
+
+}
+.follow-google {
+  background-color: #da573b;
+  border-color: #be5238;
+}
+.follow-google:hover{
+  background-color: #be5238;
+  border-color: #9b4631;
+}
+.follow-youtube{
+	background-color: #cc181e;
+	border-color: #9b4631;
+}
+.follow-youtube:hover{
+	background-color: #B81117;
+	border-color: #9b4631;
+}
+
+.follow-twitter {
+  background-color: #1daee3;
+  border-color: #3997ba;
+}
+.follow-twitter:hover {
+  background-color: #3997ba;
+  border-color: #347b95;
+}
+
+.follow-facebook {
+  background-color: #4c699e;
+  border-color: #47618d;
+}
+.follow-facebook:hover {
+  background-color: #47618d;
+  border-color: #3c5173;
 }

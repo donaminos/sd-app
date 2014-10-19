@@ -43,6 +43,8 @@ gem "pundit"
 
 gem 'friendly_id', '~> 5.0.0'
 
+gem 'meta-tags'
+
 group :development, :test do
   gem 'sqlite3'
 end
