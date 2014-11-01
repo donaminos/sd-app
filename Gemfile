@@ -45,6 +45,9 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem 'meta-tags'
 
+gem 'kaminari'
+
+
 group :development, :test do
   gem 'sqlite3'
 end

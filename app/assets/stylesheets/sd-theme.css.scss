@@ -1199,3 +1199,20 @@ a:hover{
     font-weight: 700;
     min-height: 60px;
 }
+.pagination > li > a, .pagination > li > span{
+	color:#13987E !important;
+	/*border-color: #13987E !important;
+	/*color:#5bc0de !important;*/
+	
+}
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus{
+	background-color:#13987E !important;
+	border-color: #13987E !important;
+	/*background-color:#5bc0de !important;*/
+	color:#fff !important;
+}
