@@ -1,19 +1,17 @@
-
-
-<div class="container">
+<div class="container margin-navbar-top">
 	<div class="row">
    <div class="col-md-8 col-md-offset-1 panel panel-default post-container" >
 
-    <!-- First Blog Post -->
+
     <h2 class="text-blue">
       <%= @article.title %>
     </h2>
 
     <div class="post-header-line">
 
-      <span class="glyphicon glyphicon-calendar">
+      <span class="glyphicon glyphicon-calendar"></span>&nbsp;
 
-      </span><%= @article.created_at %>
+      <%= @article.created_at.strftime("%d/%m/%Y") %>
 
     </div>
 

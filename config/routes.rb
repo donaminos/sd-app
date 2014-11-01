@@ -1,5 +1,6 @@
 SdApp::Application.routes.draw do
-  resources :articles
+  resources :articles, :path => "posts"
+
 
   #resources :lessons
   resources :courses do

@@ -24,6 +24,13 @@
                 <%= link_to "Courses", courses_path %>
               </li>
 
+            <% if request.original_url.to_s.include? "posts" %>
+              <li class="active">
+              <% else %>
+              <li>
+              <% end %> 
+                <%= link_to "Posts", articles_path %>
+              </li>
             
              
       
@@ -76,9 +83,6 @@
               <%= link_to "Service", root_path %>
             </li>
 
-            
-
-
               <% if request.original_url.to_s.include? "courses" %>
               <li class="active">
               <% else %>
@@ -87,6 +91,13 @@
               <%= link_to "Courses", courses_path %>
             </li>
 
+            <% if request.original_url.to_s.include? "posts" %>
+              <li class="active">
+              <% else %>
+                <li>
+              <% end %> 
+              <%= link_to "Posts", articles_path %>
+            </li>
           
               
               <% if request.original_url.to_s.include? "sign_in" %>
