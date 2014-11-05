@@ -1,17 +1,19 @@
 class Article < ActiveRecord::Base
-	validates_presence_of :title
-	validates_presence_of :body
+  
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+	validates_presence_of :title, :body, :slug
+
 	
   paginates_per 10
 
-	extend FriendlyId
-  	friendly_id :slug_candidates, use: :slugged
+
 
   	def slug_candidates
     [
       :title,
-      [:title, :created_at]
-      
+      [:title, :created_at]     
     ]
   	end
 end

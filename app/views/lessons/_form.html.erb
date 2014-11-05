@@ -43,12 +43,13 @@
     <%= f.label :note %><br>
     <%= f.text_area :note, class: "form-control" %>
   </div>
-
+  
+  <% if not @lesson.slug.blank? %>
    <div class="form-group">
     <%= f.label :slug %><br>
     <%= f.text_field :slug, class: "form-control" %>
   </div>
-  
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

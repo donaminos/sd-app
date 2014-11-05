@@ -31,12 +31,13 @@
             <%= f.text_area :body, :size => "30x30", class: "form-control" %>
           </div>
         
-
+        <% if not @article.slug.blank? %> 
           <div class="form-group">
             <%= f.label :slug %><br>
             <%= f.text_field :slug, class: "form-control" %>
           </div>
-         
+         <% end %>
+
          <br><br>
           <div class="pull-right">
             <%= f.submit 'Save' , :class => 'btn btn-success btn-lg' %>
