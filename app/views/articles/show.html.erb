@@ -16,8 +16,8 @@
     </div>
 
     <div class="post-content text-justify">
-      <div class="text-center">
-          <%= image_tag @article.image.url , class: 'img-thumbnail img-responsive', width: '640px' %>
+      <div class="post-image">
+          <%= image_tag @article.image.url , class: 'img-thumbnail img-responsive' %>
       </div>
   
        <%= raw coderay @article.body %>

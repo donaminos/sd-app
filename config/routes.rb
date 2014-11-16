@@ -7,7 +7,12 @@ SdApp::Application.routes.draw do
 
   #resources :lessons
   resources :courses do
-    resources :lessons
+    resources :lessons do
+       member do
+        put :move_up
+        put :move_down
+      end 
+    end
   end
 
   devise_for :users

@@ -12,5 +12,15 @@ class LessonPolicy < ApplicationPolicy
   def show?
     true
   end
+  
+  def move_up?
+    #false
+    isadmin
+  end
+  
+  def move_down?
+    #false
+    isadmin
+  end
 
 end

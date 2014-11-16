@@ -1,6 +1,8 @@
 class Lesson < ActiveRecord::Base
 	belongs_to :course
-	validates_presence_of :title, :description, :course_id
+  acts_as_list scope: :course
+	
+  validates_presence_of :title, :description, :course_id
 
 	extend FriendlyId
   	friendly_id :slug_candidates, use: :slugged

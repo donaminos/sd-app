@@ -52,6 +52,8 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem "paperclip", "~> 4.2"
 
+gem 'acts_as_list'
+
 group :development, :test do
   gem 'sqlite3'
 end

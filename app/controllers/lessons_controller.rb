@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!, :load_course
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy, :move_up, :move_down]
   after_action :verify_authorized
   # GET /courses/:course_id/lessons
   # GET /lessons.json
@@ -27,6 +27,22 @@ class LessonsController < ApplicationController
   def edit
   #  @lesson = @course.lessons.find(params[:id])
      authorize @lesson
+  end
+
+  def move_up
+
+    @lesson.move_higher
+    authorize @lesson
+     #format.html { redirect_to [@lesson.course, @lesson], notice: 'Lesson was successfully updated.' }
+    redirect_to course_lessons_url 
+  end
+
+  def move_down
+   
+    @lesson.move_lower
+    authorize @lesson
+   # format.html { redirect_to [@lesson.course, @lesson], notice: 'Lesson was successfully updated.' }
+     redirect_to course_lessons_url 
   end
 
   # POST /lessons
@@ -91,6 +107,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :description, :order, :video_id, :course_id, :note)
+      params.require(:lesson).permit(:title, :description, :order, :video_id, :course_id, :note, :position)
     end
 end

@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-	has_many :lessons
+	has_many :lessons, -> { order("position ASC") }
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
