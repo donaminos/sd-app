@@ -16,6 +16,10 @@
     </div>
 
     <div class="post-content text-justify">
+      <div class="text-center">
+          <%= image_tag @article.image.url , class: 'img-thumbnail img-responsive', width: '640px' %>
+      </div>
+  
        <%= raw coderay @article.body %>
     </div>
 

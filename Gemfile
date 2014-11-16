@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.2"
+#ruby "2.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
@@ -50,6 +50,8 @@ gem 'kaminari'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem "paperclip", "~> 4.2"
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -57,7 +59,9 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'unicorn' # make sure you follow installation instructions for this gem
+  #gem 'unicorn' # make sure you follow installation instructions for this gem
+    gem "eventmachine", ">= 1.0.0.beta"
+	gem 'thin'
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
