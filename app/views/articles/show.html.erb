@@ -16,9 +16,11 @@
     </div>
 
     <div class="post-content text-justify">
+      <% if @article.image? %>
       <div class="post-image">
           <%= image_tag @article.image.url , class: 'img-thumbnail img-responsive' %>
       </div>
+      <% end %>
   
        <%= raw coderay @article.body %>
     </div>
