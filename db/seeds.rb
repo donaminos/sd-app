@@ -11,14 +11,14 @@
 # 						introduction: '<p>
 # Derrière ce titre un peu provocateur se cache une hypothèse simple: celle qu’on peut produire des choses intéressantes en un weekend. 
 # <br>
-# J\’ai eu l’occasion de participer à plusieurs hackathons qui démarrent le vendredi soir et se terminent le dimanche soir; et j\'ai pu voir ce qu\'on pouvait faire en si peu de temps.  Il suffit d\'être suffisamment motivé. C’est cette expérience qui a inspiré ce format de 24H chrono.
+# J''ai eu l’occasion de participer à plusieurs hackathons qui démarrent le vendredi soir et se terminent le dimanche soir; et j\'ai pu voir ce qu\'on pouvait faire en si peu de temps.  Il suffit d\'être suffisamment motivé. C’est cette expérience qui a inspiré ce format de 24H chrono.
 # </p>
 # <p>
-# Soyons réaliste, on ne de devient pas ingénieur(e) ou architecte logiciel en 24 H. L\’idée de ce cours est que tu puisses détruire la frontière entre toi et le monde du code en l’espace d’un weekend. 
+# Soyons réaliste, on ne de devient pas ingénieur(e) ou architecte logiciel en 24 H. L'’idée de ce cours est que tu puisses détruire la frontière entre toi et le monde du code en l’espace d’un weekend. 
 # Le rythme est certes, un peu soutenu; mais l\'exercise reste intéressant et très enrichissant je pense. 
 # <br>
-# Tu n\’est pas obligé de le suivre. L\'essentiel est d\'apprendre et de prendre du plaisir.  
-# Et la meilleure manière de faire, c\'est celle qui te convient le plus. 
+# Tu n\’est pas obligé de le suivre. L''essentiel est d''apprendre et de prendre du plaisir.  
+# Et la meilleure manière de faire, c''est celle qui te convient le plus. 
 # </p>
 # <br>
 # <p>
@@ -28,7 +28,7 @@
 # <li>Être familier avec la jargon du dev: front, back , serveur, classe, controller...</li>
 # <li>Connaitre le principe de la programmation orientée objet et des bases de données relationnelles</li>
 # <li>Lire et écrire HTML et CSS notamment avec Bootstrap</li>
-# <li>Être à l\'aise avec le ligne de commande: créer un projet, démarrer le serveur, migrer la base de données...</li>
+# <li>Être à l''aise avec le ligne de commande: créer un projet, démarrer le serveur, migrer la base de données...</li>
 # <li>Connaitre le Workflow basic de  git: add / commit / push</li>
 # <li>Être capable de reproduire une application similaire à celle du cours</li>
 # <li>Être capable de déployer une application rails sur le cloud Heroku</li>
