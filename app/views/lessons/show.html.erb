@@ -28,21 +28,30 @@
 
           <div class="list-group">
 
-            <%= link_to 'Introduction' , course_lessons_path(@course), class: "list-group-item" %>
+            <%= link_to '0 - Introduction' , course_lessons_path(@course), class: "list-group-item" %>
 
             <% @lesson.course.lessons.each do |lesson| %>
+    
+  <% if policy(@lesson).move_up? %>
+     <%= link_to "up", move_up_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
+    <% end %>
 
-            <% if lesson.id == @lesson.id %>
+     <% if policy(@lesson).move_down? %>
+                  <%= link_to "down", move_down_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
+      <% end %>
+              <% if lesson.id == @lesson.id %>
 
-            <%= link_to lesson.title , [lesson.course, lesson], class: "list-group-item active" %>
+              <%= link_to "#{lesson.position} - #{lesson.title}" , [lesson.course, lesson], class: "list-group-item active" %>
 
-            <% else %>
+              <% else %>
 
-            <%= link_to lesson.title , [lesson.course, lesson], class: "list-group-item" %>
+              <%= link_to "#{lesson.position} - #{lesson.title}" , [lesson.course, lesson], class: "list-group-item" %>
 
-            <% end -%>
+              <% end %>
 
-            <% end -%>
+         
+
+            <% end %>
 
 
 

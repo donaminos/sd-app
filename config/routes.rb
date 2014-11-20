@@ -1,10 +1,18 @@
 SdApp::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+ 
   resources :articles, :path => "posts"
 
 
   #resources :lessons
   resources :courses do
-    resources :lessons
+    resources :lessons do
+       member do
+        put :move_up
+        put :move_down
+      end 
+    end
   end
 
   devise_for :users
