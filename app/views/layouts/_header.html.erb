@@ -24,12 +24,12 @@
                 <%= link_to "Courses", courses_path %>
               </li>
 
-            <% if request.original_url.to_s.include? "posts" %>
+            <% if request.original_url.to_s.include? "blog" %>
               <li class="active">
               <% else %>
               <li>
               <% end %> 
-                <%= link_to "Posts", articles_path %>
+                <%= link_to "Blog", articles_path %>
               </li>
             
              
@@ -91,12 +91,12 @@
               <%= link_to "Courses", courses_path %>
             </li>
 
-            <% if request.original_url.to_s.include? "posts" %>
+            <% if request.original_url.to_s.include? "blog" %>
               <li class="active">
               <% else %>
                 <li>
               <% end %> 
-              <%= link_to "Posts", articles_path %>
+              <%= link_to "Blog", articles_path %>
             </li>
           
               
