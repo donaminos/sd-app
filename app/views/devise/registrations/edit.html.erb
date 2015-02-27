@@ -1,79 +1,84 @@
 
-  <div class="container">
+<div class="container">
 
-    <div class="row">
-      <div class="text-center">
-        <h2>Edit <%= resource_name.to_s.humanize %></h2>
-      </div>
+  <div class="row">
+    <div class="text-center">
+      <h2>Edit profile</h2>
     </div>
+  </div>
 
-    <div class="row">
+  <div class="row">
+   <%= render "devise/shared/notifications" %>
+ </div>
 
-      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-2 well">
-    
-    <%= render "devise/shared/notifications" %>
+ <div class="row">
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
-    
-    
+  <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-2">
 
-      <div class="form-group col-md-6 col-sm-6 col-xs-12">
-          <label for="mce-FNAME" class="sr-only">First Name </label>
-          <input type="text" value="" name="FNAME" class="form-control input-lg" id="mce-FNAME" placeholder="First Name">
-        </div>
+    <div class="panel panel-default panel-sd">
+
+      <div class="panel-body">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+
         <div class="form-group col-md-6 col-sm-6 col-xs-12">
-          <label for="lastname" class="sr-only">Last Name </label>
-          <input type="text" value="" name="LNAME" class="form-control input-lg" id="lastname" placeholder="Last Name">
+          <%= f.label :firstname, class: "sr-only" %>
+          <%= f.text_field :firstname, autofocus: true, class: "form-control input-lg", placeholder: "Firstname" %>
+        </div>
+
+        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+          <%= f.label :lastname, class: "sr-only" %>
+          <%= f.text_field :lastname, autofocus: true, class: "form-control input-lg", placeholder: "Lastname" %>
         </div>
 
 
-      <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <%= f.label :email, class: "sr-only" %>
-        <%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: "Email" %>
-      </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+          <%= f.label :email, class: "sr-only" %>
+          <%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: "Email" %>
+        </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+        <% end %>
 
-      <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <%= f.label :password, class: "sr-only" %><i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password" %>
-     </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+          <%= f.label :password, class: "sr-only" %><i>(leave blank if you don't want to change it)</i>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password" %>
+        </div>
 
-      <div class="fform-group col-md-12 col-sm-12 col-xs-12">
-        <%= f.label :password_confirmation, class: "sr-only" %>
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", placeholder: "Password confimration" %>
-      </div>
+        <div class="fform-group col-md-12 col-sm-12 col-xs-12">
+          <%= f.label :password_confirmation, class: "sr-only" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", placeholder: "Password confimration" %>
+        </div>
 
-      <div class="form-group col-md-12 col-sm-12 col-xs-12">
-        <%= f.label :current_password, class: "sr-only" %><i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control input-lg", placeholder: "Current password" %>
-      </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+          <%= f.label :current_password, class: "sr-only" %><i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control input-lg", placeholder: "Current password" %>
+        </div>
 
-      <div class="clear form-group col-md-12 col-sm-12 col-xs-12">
-      <%= link_to "Cancel", :back , class: "btn btn-lg btn-default pull-left" %>
-       <button type="submit" class="btn btn-lg btn-primary pull-right">Update</button>
-      </div>
-  <% end %>
+        <div class="clear form-group col-md-12 col-sm-12 col-xs-12">
+          <%= link_to "Cancel", :back , class: "btn btn-lg btn-default pull-left" %>
+          <button type="submit" class="btn btn-lg btn-primary pull-right">Update</button>
+        </div>
+        <% end %>
 
         <div class="col-md-12">    
          <h3>Supprimer mon compte</h3>
 
-        <p> <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-danger" %></p>
+         <p> <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-danger" %></p>
+       </div>
 
-   
-    </div>
+     </div>
 
-    </div>
-    
-    
-    
-  
-  </div>
-    
-  
+   </div>
 
-   </div>  
+ </div>
+
+</div>
+
+
+
+</div>  
 

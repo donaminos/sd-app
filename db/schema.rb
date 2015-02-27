@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116212851) do
+ActiveRecord::Schema.define(version: 20150226232236) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -57,9 +57,11 @@ ActiveRecord::Schema.define(version: 20141116212851) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "articles", ["slug"], name: "index_articles_on_slug"
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "courses", force: true do |t|
     t.string   "title"
@@ -116,6 +118,8 @@ ActiveRecord::Schema.define(version: 20141116212851) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false, null: false
+    t.string   "firstname"
+    t.string   "lastname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
