@@ -4,41 +4,49 @@
 
 
     <h2 class="text-blue">
-      <%= @article.title %>
+      <%= @article.title %> 
     </h2>
+    <time class="post-date"><%= @article.created_at.strftime("%d/%m/%Y") %></time> 
 
     <div class="post-header-line">
 
-      <span class="glyphicon glyphicon-calendar"></span>&nbsp;
-
-      <%= @article.created_at.strftime("%d/%m/%Y") %>
+      <span class="glyphicon glyphicon-tag"></span>&nbsp;
+      <span class=""><%= @article.user.full_name %></span>
 
     </div>
 
     <div class="post-content text-justify">
       <% if @article.image? %>
       <div class="post-image">
-          <%= image_tag @article.image.url , class: 'img-thumbnail img-responsive' %>
+        <%= image_tag @article.image.url , class: 'img-thumbnail img-responsive' %>
       </div>
       <% end %>
-  
-       <%= raw coderay @article.body %>
+
+      <%= raw coderay @article.body %>
     </div>
 
+    <div class="pull-right text-center">
+     <%= image_tag @article.user.image.url(:profile) , class: 'img-circle' %>
+     <span class="post-author label label-danger"><%= @article.user.full_name %></span>
+   </div>
 
-    <%= link_to 'Back', articles_path, class: "btn btn-default" %>       
- 
-    <% if policy(@article).update? %>
-      <%= link_to 'Edit', edit_article_path(@article) , class: "btn btn-warning"%>
- 
-      <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
-    <% end %>
+   <div style="clear:both">
+     <%= link_to 'Back', articles_path, class: "btn btn-default" %>       
 
-  </div>
+     <% if policy(@article).update? %>
+     <%= link_to 'Edit', edit_article_path(@article) , class: "btn btn-warning"%>
 
-  <div class="col-md-3">
-    <%= render 'sidebar' %>
-  </div>
+     <%= link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %>
+     <% end %>
+
+   </div>
+   
+
+ </div>
+
+ <div class="col-md-3">
+  <%= render 'sidebar' %>
+</div>
 
 </div>
 </div>

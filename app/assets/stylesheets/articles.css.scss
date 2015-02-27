@@ -21,7 +21,9 @@
     margin-left: auto;
     margin-right: auto 
 }
-
+.label-red{
+	background-color:red;
+}
 
 .post-header-line { 
 	border-top:1px solid #DDD;
@@ -30,6 +32,38 @@
 	font-size: 14px; 
 	margin-bottom: 30px;
 }
+
+.post-date {
+position: absolute;
+top: 1em;
+right: -10px;
+padding: 0.5em;
+background-color: #13987E;
+font-weight: bold;
+
+color: #fff;
+}
+.post-date::after {
+content: '';
+position: absolute;
+top: 100%;
+right: 0;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;
+border-width: 5px;
+border-top-color: #0b2731;
+border-left-color: #0b2731;
+}
+.post-author{
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom:50px;
+	font-weight:bold;
+	display:block;
+}
+
 .sidebar-wrapper{
 	padding:10px;
 }

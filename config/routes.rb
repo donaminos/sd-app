@@ -1,5 +1,8 @@
 SdApp::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :users, controllers: { :registrations => :registrations }
+
+
   ActiveAdmin.routes(self)
  
   resources :articles, :path => "blog"
@@ -14,8 +17,6 @@ SdApp::Application.routes.draw do
       end 
     end
   end
-
-  devise_for :users
   
   get "about" => "welcome#about"
   get "terms" => "welcome#terms"
