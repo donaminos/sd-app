@@ -54,6 +54,8 @@ gem "paperclip", "~> 4.2"
 
 gem 'acts_as_list'
 
+gem 'acts-as-taggable-on'
+
 group :development, :test do
   gem 'sqlite3'
 end

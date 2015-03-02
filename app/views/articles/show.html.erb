@@ -10,8 +10,17 @@
 
     <div class="post-header-line">
 
-      <span class="glyphicon glyphicon-tag"></span>&nbsp;
-      <span class=""><%= @article.user.full_name %></span>
+      
+    
+        <span class="glyphicon glyphicon-tag"></span>&nbsp;
+           <% @article.tags.each do |tag| %>  
+        <span class="label label-info" style="margin-left:5px">
+            <%= tag.name %>
+          </span>
+       <% end %>
+    
+   
+
 
     </div>
 
