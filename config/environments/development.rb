@@ -27,5 +27,6 @@ SdApp::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  #Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-6.8.9-Q16'
   Paperclip.options[:command_path] = "/usr/local/Cellar/imagemagick/6.9.0-3/bin/identify"
 end

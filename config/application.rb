@@ -20,6 +20,5 @@ module SdApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
-Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-6.8.9-Q16'
   end
 end
