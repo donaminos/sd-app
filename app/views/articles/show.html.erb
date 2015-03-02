@@ -3,14 +3,12 @@
    <div class="col-md-8 col-md-offset-1 panel panel-default post-container" >
 
 
-    <h2 class="text-blue">
+    <h2 class="text-blue post-title">
       <%= @article.title %> 
     </h2>
     <time class="post-date"><%= @article.created_at.strftime("%d/%m/%Y") %></time> 
 
     <div class="post-header-line">
-
-      
     
         <span class="glyphicon glyphicon-tag"></span>&nbsp;
            <% @article.tags.each do |tag| %>  
@@ -18,9 +16,6 @@
             <%= tag.name %>
           </span>
        <% end %>
-    
-   
-
 
     </div>
 
@@ -34,10 +29,12 @@
       <%= raw coderay @article.body %>
     </div>
 
+  <% if @article.user.image? %>
     <div class="pull-right text-center">
      <%= image_tag @article.user.image.url(:profile) , class: 'img-circle' %>
      <span class="post-author label label-danger"><%= @article.user.full_name %></span>
    </div>
+   <% end %>
 
    <div style="clear:both">
      <%= link_to 'Back', articles_path, class: "btn btn-default" %>       
