@@ -29,7 +29,11 @@
         <div class="panel-body lessons-menu bhoechie-tab-menu ">
 
           <div class="list-group">
-            <%= link_to '0 - Introduction' , course_lessons_path(@course), class: "list-group-item active" %>
+         
+              <a href="<%= course_lessons_path(@course) %>" class="list-group-item active">
+                <span class='label label-sd'>#0</span> 
+                Introduction
+              </a>
 
             <% @course.lessons.each do |lesson| %>
 
@@ -40,8 +44,11 @@
      <% if policy(lesson).move_down? %>
                   <%= link_to "down", move_down_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
       <% end %>
-            <%= link_to "#{lesson.position} - #{lesson.title}" , [lesson.course, lesson], class: "list-group-item" %>
-
+           
+       <a href="<%= course_lesson_path(lesson.course, lesson) %>" class="list-group-item">
+                <span class='label label-sd'>#<%= lesson.position %></span> 
+                <%= lesson.title %>
+              </a>
 
 
             <% end -%>
