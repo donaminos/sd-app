@@ -44,3 +44,16 @@ border: solid 1px #e5e5e5;
    border-right: none !important;
   border-top: none !important;
 }
+
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  background-color: white;
+  }
+  .course-content{
+background-color:white; 
+padding:30px 20px;
+position: relative;
+border-radius: 0px;
+border: 1px solid #d8d8d8;
+border-top: none !important;
+  }
+  

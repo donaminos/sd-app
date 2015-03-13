@@ -1,0 +1,124 @@
+<div class="container margin-navbar-top">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <% if policy(@levels).create? %>
+      <div class="pull-right">
+        <%= link_to 'New level', new_level_path, class: "btn btn-info" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="text-center text-info">Programme</h1>
+      <br>
+      <p class="lead text-center text-justify">
+        This Specialization covers the concepts, tools, and techniques you need to both communicate with customers in a systematic and integrated way using multi-media channels and to create effective targeted promotional campaigns. The Specialization concludes with a Capstone project that allows you to apply the skills you've learned throughout the courses
+      </p>
+      <br>
+      <div class="timeline-centered">
+
+        <% @levels.each do |level| %>
+
+            <article class="timeline-entry">
+              <div class="timeline-entry-inner">
+
+                <div class="timeline-icon <%= level.code %>">
+                  <%= level.position %> 
+                </div>
+                
+              
+                   <% if level.released %>
+                    <a href="<%= courses_path(:level => level.id)%>" class="level-bloc">
+                  <% end %>
+
+                <div class="timeline-label">
+
+                   <% if level.released %>
+                   <div class="released shape">
+                      <div class="shape-text">
+                        Released               
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="upcoming shape">
+                      <div class="shape-text">
+                        Upcoming               
+                      </div>
+                    </div>
+                  <% end %>
+                
+                
+                    <h2 class="level-title"><%= level.name.upcase %> </h2>
+                     
+                     <div class="level-content">
+                          
+                             
+                            <% if not level.image.blank? %>
+                             <div class="pull-right">
+                             <%= image_tag level.image.url(:thumb), class: 'media-object level-image'  %>   
+                               </div>
+                             <% end %>
+                             
+                          
+                       <p class="level-description">
+                        <%= level.description %> 
+                      </p>
+                  </div>
+                
+                
+
+               
+           
+                
+
+                               
+              </div>
+
+                  <% if level.released %> </a>  <% end %>
+
+            <% if policy(level).update? %>
+                  <%= link_to 'Edit', edit_level_path(level) , class: "btn btn-xs btn-warning"%>
+                  <%= link_to 'Destroy', level, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-xs btn-danger" %>
+                  <% end %>  
+
+            </div>
+          </article>
+         
+    
+      <% end %>
+
+
+
+
+      <article class="timeline-entry">
+
+        <div class="timeline-entry-inner">
+
+          <div class="timeline-icon bg-success" >
+            <i class="fa fa-thumbs-up">&nbsp;</i> 
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+

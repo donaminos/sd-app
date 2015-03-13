@@ -5,7 +5,17 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    if (1..5).include? params[:level].to_f
+      @courses = Course.where(level_id: params[:level])
+      @level = Level.find(params[:level])
+      if not @level.released 
+          redirect_to levels_path
+      end
+    else
+      @courses = Course.all
+      redirect_to levels_path
+    end
+
     authorize @courses
   end
 

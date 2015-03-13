@@ -16,14 +16,16 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
             <ul class="nav navbar-nav navbar-right">
 
-              <% if request.original_url.to_s.include? "courses" %>
+            <% if request.original_url.to_s.include? "levels" %>
                 <li class="active">   <% else %>  <li>
               <% end %> 
-                <%= link_to "Courses", courses_path %>
+                <%= link_to "Courses", levels_path %>
               </li>
 
+          
             <% if request.original_url.to_s.include? "blog" %>
               <li class="active">
               <% else %>
@@ -83,13 +85,15 @@
               <%= link_to "Service", root_path %>
             </li>
 
-              <% if request.original_url.to_s.include? "courses" %>
+          <% if request.original_url.to_s.include? "levels" %>
               <li class="active">
               <% else %>
                 <li>
               <% end %> 
-              <%= link_to "Courses", courses_path %>
+              <%= link_to "Programme", levels_path %>
             </li>
+
+        
 
             <% if request.original_url.to_s.include? "blog" %>
               <li class="active">

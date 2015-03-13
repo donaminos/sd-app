@@ -2,7 +2,8 @@
 
 <div class="container margin-navbar-top">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10 col-md-offset-1">
+
       <div class="panel panel-default panel-default panel-sd">
         <div class="panel-body ">
           <div class="pull-right">
@@ -13,10 +14,10 @@
             <%= link_to 'Destroy', @course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger btn-xs" %>
             <% end %>
           </div>
+
           <h2 class="text-blue"><%= @course.title %></h2>
-
-        </div>
-
+          <span class="pull-right text-red">Updated:&nbsp;<%= @course.updated_at.strftime("%d/%m/%Y") %></span>
+        </div>                   
       </div>
     </div>
 
@@ -24,67 +25,70 @@
 
   <div class="row">
 
-    <div class="col-md-3">
+    <div class="col-md-10 col-md-offset-1">
+
       <div class="panel panel-default panel-default panel-sd panel-course-detail">
-        <div class="panel-body lessons-menu bhoechie-tab-menu ">
-
-          <div class="list-group">
-         
-              <a href="<%= course_lessons_path(@course) %>" class="list-group-item active">
-                <span class='label label-sd'>#0</span> 
-                Introduction
-              </a>
-
-            <% @course.lessons.each do |lesson| %>
-
-  <% if policy(lesson).move_up? %>
-     <%= link_to "up", move_up_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
-    <% end %>
-
-     <% if policy(lesson).move_down? %>
-                  <%= link_to "down", move_down_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
-      <% end %>
-           
-       <a href="<%= course_lesson_path(lesson.course, lesson) %>" class="list-group-item">
-                <span class='label label-sd'>#<%= lesson.position %></span> 
-                <%= lesson.title %>
-              </a>
-
-
-            <% end -%>
-
-
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="col-md-9">
-
-      <div class="panel panel-default panel-default panel-sd ">
         <div class="panel-body ">
-          <div class="lesson-content">
-
-
-            <h3 class="fa fa-info-circle sd-green-color">&nbsp;Introduction:</h3>
-
-            <div class="course-introduction">
-               <% if not @course.introduction.blank? %>
-              <%= raw coderay @course.introduction %>
-              <% end %>
-            </div>
-
-          </div>
-
-
+           <div class="lesson-note">
+          <h3 class="text-info"> 
+            <span class='label label-sd'>#0</span>&nbsp;Introduction
+          </h3>
         </div>
-      </div>
 
+         <div class="lesson-content">
+          <div class="text-center" style="background-color:black; width:100%;padding:20px;">
+            <div class="embed-responsive">
+
+             <iframe src="//player.vimeo.com/video/<%= @course.video_id %>" width="854" height="480px" frameborder="0" class="embed-responsive-item"></iframe>
+           </div>
+         </div>
+
+
+
+      </div>
 
     </div>
   </div>
 
+
 </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active">
+        <a href="#lessons" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Lessons</h4></a>
+      </li>
+
+      <li><a href="#notes" role="tab" data-toggle="tab"><h4 class="text-capitalize">Notes</h4></a></li>
+    </ul> 
+
+    <div class="tab-content course-content">
+   
+      <div class="tab-pane active" id="lessons">                
+       <%= render 'courses/lessons', :lessons => @course.lessons %>
+
+      </div>
+
+      <div class="tab-pane" id="notes">
+       <h3 class="fa fa-file-text-o sd-green-color"> Notes:</h3>
+        
+        <div class="course-introduction">
+           <% if not @course.introduction.blank? %>
+           <%= raw coderay @course.introduction %>
+           <% end %>
+         </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
 

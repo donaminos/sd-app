@@ -41,6 +41,10 @@
             <%= f.label :video_id  %><br>
             <%= f.text_field :video_id , class: "form-control" %>
           </div>
+          <div class="field form-group">
+            <%= f.label :level %><br>
+            <%= f.number_field :level_id, class: "form-control"  %>
+          </div>
           <% if not @course.slug.blank? %>
           <div class="form-group">
             <%= f.label :slug %><br>

@@ -1,0 +1,297 @@
+// Place all the styles related to the Levels controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.timeline-centered {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-centered:before, .timeline-centered:after {
+  content: " ";
+  display: table;
+}
+
+.timeline-centered:after {
+  clear: both;
+}
+
+.timeline-centered:before, .timeline-centered:after {
+  content: " ";
+  display: table;
+}
+
+.timeline-centered:after {
+  clear: both;
+}
+
+.timeline-centered:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 4px;
+  background: #ddd;
+  /*left: 50%;*/
+  top: 20px;
+  bottom: 20px;
+  margin-left: 30px;
+}
+
+.timeline-centered .timeline-entry {
+  position: relative;
+        /*width: 50%;
+        float: right;*/
+        margin-top: 5px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        clear: both;
+      }
+
+   
+
+      .timeline-centered .timeline-entry.begin {
+        margin-bottom: 0;
+      }
+
+      .timeline-centered .timeline-entry.left-aligned {
+        float: left;
+      }
+
+      .timeline-centered .timeline-entry.left-aligned .timeline-entry-inner {
+        margin-left: 0;
+        margin-right: -18px;
+      }
+
+      .timeline-centered .timeline-entry.left-aligned .timeline-entry-inner .timeline-time {
+        left: auto;
+        right: -100px;
+        text-align: left;
+      }
+
+   
+
+      .timeline-centered .timeline-entry.left-aligned .timeline-entry-inner .timeline-label:after {
+        left: auto;
+        right: 0;
+        margin-left: 0;
+        margin-right: -9px;
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner {
+        position: relative;
+        margin-left: -20px;
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time {
+        position: absolute;
+        left: -100px;
+        text-align: right;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+        background: #fff;
+        color: #737881;
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        text-align: center;
+
+        -moz-box-shadow: 0 0 0 5px #ddd;
+        -webkit-box-shadow: 0 0 0 5px #ddd;
+        box-shadow: 0 0 0 5px #ddd;
+        line-height: 40px;
+        font-size: 15px;
+        float: left;
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.newbie {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.junior {
+        background-color: #f0ad4e;
+        color: #fff;
+      }
+          .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.pro {
+        background-color: #428bca;
+        color: #fff;
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.senior {
+        background-color: #d9534f;
+        color: #fff;
+      }
+
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.ninja {
+        background-color: #000;
+        color: #fff;
+      }
+
+  
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.bg-success {
+        background-color: green;
+        color: #fff;
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+        position: relative;
+        background: #fff;
+        padding: 1em;
+        padding-right: 0em;
+        padding-top: 0em;
+        margin-left: 60px;
+        margin-bottom: 20px;
+        border: 1px solid #dddddd;
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+
+      }
+
+      .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 9px 9px 9px 0;
+
+        border-color: transparent #fff transparent transparent;
+
+        left: 0;
+        top: 10px;
+        margin-left: -9px;
+      }
+
+
+    .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:before{
+  position: absolute;
+  top: 26px;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  content: " ";
+
+    border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+    .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after{
+  position: absolute;
+  top: 27px;
+ 
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
+   
+   border-left-width: 0;
+  border-right-width: 14px;
+  left: -5px;
+  right: auto;
+}
+
+.shape{    
+    border-style: solid; border-width: 0 60px 60px 0; float:right; height: 0px; width: 0px;
+    -webkit-transform: rotate(360deg);  
+    -moz-transform: rotate(360deg);  
+    -o-transform: rotate(360deg);  
+    transform: rotate(360deg);  
+}
+.shape-text{
+    color:#fff; font-size:12px; font-weight:bold; position:relative; right:-22px; top:-3px; white-space: nowrap;
+  -ms-transform:rotate(30deg); /* IE 9 */
+  -o-transform: rotate(360deg);  /* Opera 10.5 */
+  -webkit-transform:rotate(46deg); /* Safari and Chrome */
+  transform:rotate(46deg);
+}
+.released.shape {
+border-color: transparent green transparent transparent;
+}
+.upcoming.shape {
+border-color: transparent grey transparent transparent;
+}
+
+
+a.level-bloc:link {
+    text-decoration: none;
+    display: block;
+     color:red !important;
+}
+
+
+a.level-bloc:visited {
+     text-decoration: none;
+}
+
+
+a.level-bloc:hover {
+ /* text-decoration: none;*/
+   
+}
+
+a.level-bloc:active {
+     text-decoration: none;
+}
+
+a.level-bloc h2 {
+   /* color:#2980b9 !important;*/
+}
+
+a.level-bloc:hover h2, a.level-bloc:hover blockquote {
+    color:#428bca !important;
+    text-decoration:underline;
+
+}
+
+.level-title {
+    color: #5c7280;
+}
+.level-description {
+    color: #5c7280;
+    overflow:hidden;
+    border-left: 5px solid #c0c0c0;
+    padding:0px 15px;
+ text-align: justify;
+}
+.level-content{
+padding:10px;
+
+}
+.level-image{
+  width: 200px;
+  border: 1px solid grey;
+  radius: 25px;
+}
+
+

@@ -1,0 +1,12 @@
+      
+          <% if not @lesson.note.blank? %>
+
+          <h3 class="fa fa-file-text-o sd-green-color"> Notes:</h3>
+          <%= raw coderay @lesson.note %>
+
+          <% else %>
+
+          <h3 class="fa fa-file-text-o sd-green-color"> Notes:</h3>
+          <p class="lead"> Coming Soon...</p>
+          <% end %>
+       

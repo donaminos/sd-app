@@ -1,0 +1,37 @@
+     <table class="table table-striped">
+      <tr>
+        <td><span class='label label-sd'>#0</span> </td>
+        <td> 
+          <a href="<%= course_lessons_path(@course) %>" class="list-group-ite">
+            Introduction
+          </a>
+        </td>
+      </tr>
+
+      <% lessons.each do |lesson| %>
+      <tr>
+        <td>  <span class='label label-sd'>#<%= lesson.position %></span> </td>
+        <td>
+
+          <a href="<%= course_lesson_path(lesson.course, lesson) %>" class="">
+            <%= lesson.title %>
+          </a>
+
+         
+
+        </td> 
+
+        <% if policy(lesson).move_up? %>
+        <td><%= link_to "up", move_up_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %></td>
+        <% end %>
+
+        <% if policy(lesson).move_down? %>
+          <td> 
+          <%= link_to "down", move_down_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
+          </td>
+        <% end %>
+
+      </tr>
+
+      <% end %>
+    </table>

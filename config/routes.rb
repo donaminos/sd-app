@@ -1,4 +1,6 @@
 SdApp::Application.routes.draw do
+  resources :levels
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, controllers: { :registrations => :registrations }
 
@@ -17,7 +19,7 @@ SdApp::Application.routes.draw do
       end 
     end
   end
-  
+
   get "about" => "welcome#about"
   get "terms" => "welcome#terms"
 
