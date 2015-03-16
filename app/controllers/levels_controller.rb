@@ -64,7 +64,7 @@ before_action :set_level, only: [:show, :edit, :update, :destroy]
     end
 
     def level_params
-      params.require(:level).permit(:code, :name, :description, :position, :image)
+      params.require(:level).permit(:code, :name, :description, :position, :image,:released)
     end
 end
 

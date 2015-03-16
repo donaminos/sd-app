@@ -56,7 +56,7 @@ gem 'acts_as_list'
 
 gem 'acts-as-taggable-on'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'sqlite3'
