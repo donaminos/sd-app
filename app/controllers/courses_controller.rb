@@ -6,10 +6,13 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     if (1..5).include? params[:level].to_f
-      @courses = Course.where(level_id: params[:level])
-      @level = Level.find(params[:level])
+      
+      result    = Level.where(position: params[:level])
+      @level    = result.first
+      @courses  = Course.where(level_id: @level.id)
+     
       if not @level.released 
-          redirect_to levels_path
+        redirect_to levels_path
       end
     else
       @courses = Course.all
