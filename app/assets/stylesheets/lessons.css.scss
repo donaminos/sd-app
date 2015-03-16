@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .bg-light {
-padding: 10px 15px;
-margin-bottom: 10px;
-background: #fcfcfc;
-border: solid 1px #e5e5e5;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: #fcfcfc;
+  border: solid 1px #e5e5e5;
 }
 .padding-right-30 {
 	padding-right:30px !important;
@@ -16,44 +16,43 @@ border: solid 1px #e5e5e5;
 .panel-course-detail .panel-body{
   padding: 0px !important;
 }
-  .panel-course-detail .lessons-menu{
-    padding: 0px !important;
-   
-    height: 100% !important;
-  }
-  .lessons-menu ul li{
-    padding: 10px 15px;
-     border-bottom: 1px solid #f0f0f0;
-  }
-  .lesson-content{
-    padding: 0 !important;
-     
-      height: 100% !important;
-  }
-
-  .lesson-note{
-    border-left: 1px solid #f0f0f0;
-    padding: 20px;
+.panel-course-detail .lessons-menu{
+  padding: 0px !important;
   
-  }
+  height: 100% !important;
+}
+.lessons-menu ul li{
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.lesson-content{
+  padding: 0 !important;
+  
+  height: 100% !important;
+}
+
+.lesson-note{
+  border-left: 1px solid #f0f0f0;
+  padding: 20px;
+  
+}
 
 
 .list-group-item{
   border-radius: 0 !important;
   border-left: none !important;
-   border-right: none !important;
+  border-right: none !important;
   border-top: none !important;
 }
 
-  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
   background-color: white;
-  }
-  .course-content{
-background-color:white; 
-padding:30px 20px;
-position: relative;
-border-radius: 0px;
-border: 1px solid #d8d8d8;
-border-top: none !important;
-  }
-  
+}
+.course-content{
+  background-color:white; 
+  padding:30px 20px;
+  position: relative;
+  border-radius: 0px;
+  border: 1px solid #d8d8d8;
+  border-top: none !important;
+}

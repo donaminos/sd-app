@@ -16,8 +16,12 @@
       <h1 class="text-center text-info">Programme</h1>
       <br>
       <p class="lead text-center text-justify">
-        This Specialization covers the concepts, tools, and techniques you need to both communicate with customers in a systematic and integrated way using multi-media channels and to create effective targeted promotional campaigns. The Specialization concludes with a Capstone project that allows you to apply the skills you've learned throughout the courses
-      </p>
+       StartupDecode à pour but d’apprendre aux jeunes entrepreneurs comment coder un Minimum Viable Product sans se perdre dans la théorie de l’informatique. 
+       <br>
+        La formation se compose de cinq niveaux pour passer de “newbie” à “ninja”. Durant chaque niveau nous allons coder une application web parmi les plus populaires du monde des startups comme par exemple AirBnB, Quora ou Kickstarter. 
+        <br>
+        Malgré le fait que tous les niveaux soit indépendants, il n’en démeure pas moins que chaque cours capitalise sur les acquis du précédent pour approfondir des connaissance et faire découvrir de nouvelles.
+        </p>
       <br>
       <div class="timeline-centered">
 
@@ -32,53 +36,51 @@
                 
               
                    <% if level.released %>
-                    <a href="<%= courses_path(:level => level.id)%>" class="level-bloc">
-                  <% end %>
-
+                      <% if  user_signed_in? %>
+                        <a href="<%= courses_path(:level => level.id)%>" class="level-bloc">
+                      <% else %>
+                        <a href="<%= new_user_registration_path %>" class="level-bloc">
+                      <% end %>
+                   <% end %>
+  
                 <div class="timeline-label">
 
                    <% if level.released %>
-                   <div class="released shape">
+                   <div class="released shape" style="margin-top:0px important">
                       <div class="shape-text">
                         Released               
                       </div>
                     </div>
                   <% else %>
-                    <div class="upcoming shape">
+                    <div class="upcoming shape" style="margin-top:0px important">
                       <div class="shape-text">
                         Upcoming               
                       </div>
                     </div>
                   <% end %>
                 
-                
-                    <h2 class="level-title"><%= level.name.upcase %> </h2>
-                     
-                     <div class="level-content">
-                          
-                             
+                    <div style="padding-top:20px">
+                         <h2 class="level-title"><%= level.name.upcase %> </h2>
+                         
+                         <div class="level-content">
+                                 
                             <% if not level.image.blank? %>
                              <div class="pull-right">
-                             <%= image_tag level.image.url(:thumb), class: 'media-object level-image'  %>   
-                               </div>
-                             <% end %>
-                             
-                          
-                       <p class="level-description">
-                        <%= level.description %> 
-                      </p>
-                  </div>
-                
-                
-
+                                <%= image_tag level.image.url(:thumb), class: 'level-image'  %>   
+                             </div>
+                            <% end %>
+                                 
+                            <p class="level-description">
+                              <%= level.description %> 
+                            </p>
+                        </div>
+                    </div>
                
-           
-                
-
-                               
+               <% if level.released %> <span class="btn btn-xs btn-primary">Enroll now </span>  <% end %>
+                           
               </div>
 
-                  <% if level.released %> </a>  <% end %>
+              <% if level.released %> </a>  <% end %>
 
             <% if policy(level).update? %>
                   <%= link_to 'Edit', edit_level_path(level) , class: "btn btn-xs btn-warning"%>

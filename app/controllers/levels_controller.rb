@@ -5,7 +5,7 @@ before_action :set_level, only: [:show, :edit, :update, :destroy]
  
 	def index
     @levels = Level.all.order('position')
-    authorize @levels
+    authorize Level
   end
 
   def show

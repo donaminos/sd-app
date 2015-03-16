@@ -27,23 +27,6 @@
 
 <% if request.original_url.to_s.include? "courses" or request.original_url.to_s.include? "articles" or request.original_url.to_s.include? "terms" %>
   <div class="main-content margin-navbar-top">
-
-    <% if notice %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <p class="alert alert-success"><%= notice %></p>
-        </div>
-      </div>
-    <% end %>
-
-  <% if alert %>
-   <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <p class="alert alert-danger"><%= alert %></p>
-      </div>
-    </div>
-  <% end %>
-
 <% else %>
   <div class="main-content">
 <% end %>
