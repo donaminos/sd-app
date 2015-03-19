@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       
-    <a href="<%= courses_path(:level => @course.level.position)%>" class="btn btn-info" style="margin-bottom:20px">Back to courses </a>
+    <a href="<%= level_courses_path(@course.level)%>" class="btn btn-info" style="margin-bottom:20px">Back to courses </a>
 
 
       <div class="panel panel-default panel-default panel-sd">
@@ -12,9 +12,9 @@
           <div class="pull-right">
             <% if policy(@course).update? %>
             <%= link_to 'New Lesson', new_course_lesson_path, class: "btn btn-xs btn-info" %>
-            <%= link_to 'Edit', edit_course_path(@course) , class: "btn btn-warning btn-xs"%>
+            <%= link_to 'Edit course', edit_course_path(@course) , class: "btn btn-warning btn-xs"%>
 
-            <%= link_to 'Destroy', @course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger btn-xs" %>
+            <%= link_to 'Destroy course', @course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger btn-xs" %>
             <% end %>
           </div>
 
@@ -45,8 +45,6 @@
              <iframe src="//player.vimeo.com/video/<%= @course.video_id %>" width="854" height="480px" frameborder="0" class="embed-responsive-item"></iframe>
            </div>
          </div>
-
-
 
       </div>
 

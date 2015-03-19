@@ -13,21 +13,19 @@
         <td>  <span class='label label-sd'>#<%= lesson.position %></span> </td>
         <td>
 
-          <a href="<%= course_lesson_path(lesson.course, lesson) %>" class="">
+          <a href="<%= lesson_path(lesson) %>" class="">
             <%= lesson.title %>
           </a>
-
-         
 
         </td> 
 
         <% if policy(lesson).move_up? %>
-        <td><%= link_to "up", move_up_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %></td>
+        <td><%= link_to "up", move_up_lesson_path( lesson), method: :put, class: 'btn btn-xs btn-info' %></td>
         <% end %>
 
         <% if policy(lesson).move_down? %>
           <td> 
-          <%= link_to "down", move_down_course_lesson_path(lesson.course, lesson), method: :put, class: 'btn btn-xs btn-info' %>
+          <%= link_to "down", move_down_lesson_path(lesson), method: :put, class: 'btn btn-xs btn-info' %>
           </td>
         <% end %>
 

@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   def index
 
     if user_signed_in?
-    	redirect_to :controller=>'courses', :action => 'index'
+    	redirect_to :controller=>'levels', :action => 'index'
 	 end
   end
 

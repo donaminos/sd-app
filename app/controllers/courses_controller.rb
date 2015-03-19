@@ -1,24 +1,25 @@
 class CoursesController < ApplicationController
 
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_level, only: [:index, :create, :new]
   after_action :verify_authorized
   # GET /courses
   # GET /courses.json
   def index
-    if (1..5).include? params[:level].to_f
+    # if (1..5).include? params[:level].to_f
       
-      result    = Level.where(position: params[:level])
-      @level    = result.first
-      @courses  = Course.where(level_id: @level.id)
+    #   #result    = Level.where(position: params[:level])
+    #   #@level    = result.first
+    #   @courses  = Course.where(level_id: @level.id)
      
-      if not @level.released 
-        redirect_to levels_path
-      end
-    else
-      @courses = Course.all
-      redirect_to levels_path
-    end
-
+    #   if not @level.released 
+    #     #redirect_to levels_path
+    #   end
+    # else
+    #   @courses = Course.all
+    #   #redirect_to levels_path
+    # end
+    @courses = @level.courses
     authorize @courses
   end
 
@@ -34,7 +35,8 @@ class CoursesController < ApplicationController
 
   # GET /courses/new
   def new
-    @course = Course.new
+    @course = @level.courses.build
+    #@course = Level.course.build
     authorize @course
   end
 
@@ -47,7 +49,9 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
+    #level = Level.where(position: course_params[:level_id] )
+    @course = @level.courses.build(course_params)
+    #@course.level = level
     authorize @course
     respond_to do |format|
       if @course.save
@@ -81,7 +85,7 @@ class CoursesController < ApplicationController
     authorize @course
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to courses_url }
+      format.html { redirect_to level_courses_url(@course.level) }
      # format.json { head :no_content }
     end
   end
@@ -91,6 +95,10 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.friendly.find(params[:id])
+    end
+
+ def set_level
+      @level = Level.friendly.find(params[:level_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

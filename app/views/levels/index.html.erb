@@ -37,7 +37,7 @@
               
                    <% if level.released %>
                       <% if  user_signed_in? %>
-                        <a href="<%= courses_path(:level => level.position)%>" class="level-bloc">
+                        <a href="<%= level_courses_path(level)%>" class="level-bloc">
                       <% else %>
                         <a href="<%= new_user_registration_path %>" class="level-bloc">
                       <% end %>

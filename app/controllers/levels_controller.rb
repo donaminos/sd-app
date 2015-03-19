@@ -60,7 +60,7 @@ before_action :set_level, only: [:show, :edit, :update, :destroy]
   private
 
     def set_level
-      @level = Level.find(params[:id])
+      @level = Level.friendly.find(params[:id])
     end
 
     def level_params

@@ -10,8 +10,7 @@ class Lesson < ActiveRecord::Base
   	def slug_candidates
     [
       :title,
-      [:course, :title],
-      [:course, :title, :created_at]
+      [:title, :created_at]
       
     ]
 	end

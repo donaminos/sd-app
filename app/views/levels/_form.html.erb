@@ -49,6 +49,14 @@
     <%= f.label :released %><br>
     <%= f.check_box :released, class: "form-control" %>
   </div>
+
+   <% if not @level.slug.blank? %>
+   <div class="form-group">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug, class: "form-control" %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

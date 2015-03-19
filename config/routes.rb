@@ -1,5 +1,5 @@
 SdApp::Application.routes.draw do
-  resources :levels
+  
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, controllers: { :registrations => :registrations }
@@ -10,15 +10,17 @@ SdApp::Application.routes.draw do
   resources :articles, :path => "blog"
 
 
-  #resources :lessons
-  resources :courses do
-    resources :lessons do
-       member do
-        put :move_up
-        put :move_down
-      end 
+  resources :levels, shallow: true do
+    resources :courses do
+      resources :lessons do
+         member do
+          put :move_up
+          put :move_down
+        end 
+      end
     end
   end
+
 
   get "about" => "welcome#about"
   get "terms" => "welcome#terms"
