@@ -5,14 +5,16 @@ class Level < ActiveRecord::Base
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :slug_candidates, use: [:slugged, :history]
 
   
   def slug_candidates
     [
-      :code,
-      [:code, :created_at]
-      
+      :code
     ]
+  end
+
+    def should_generate_new_friendly_id?
+      code_changed? || !self.slug.present?
   end
 end

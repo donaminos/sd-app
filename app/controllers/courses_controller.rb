@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
 
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :set_level, only: [:index, :create, :new]
-  after_action :verify_authorized
+  after_action  :verify_authorized
   # GET /courses
   # GET /courses.json
   def index

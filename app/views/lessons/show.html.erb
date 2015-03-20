@@ -10,10 +10,10 @@
       <div class="panel-body ">
         <div class="pull-right">
           <% if policy(@lesson.course).update? %>
-          <%= link_to 'New Lesson', new_course_lesson_path(@lesson.course), class: "btn btn-xs btn-info" %>
-          <%= link_to 'Edit', edit_course_path(@lesson.course) , class: "btn btn-warning btn-xs"%>
+          <%= link_to 'New lesson', new_course_lesson_path(@lesson.course), class: "btn btn-xs btn-info" %>
+          <%= link_to 'Edit course', edit_course_path(@lesson.course) , class: "btn btn-warning btn-xs"%>
 
-          <%= link_to 'Destroy', @lesson.course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger btn-xs" %>
+          <%= link_to 'Destroy course', @lesson.course, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger btn-xs" %>
           <% end %>
         </div>
 

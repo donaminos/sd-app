@@ -4,7 +4,7 @@
     <div class="panel panel-default">
   <div class="panel-body">
     
-<%= form_for( [@lesson.course,@lesson], class: "form") do |f| %>
+<%= form_for(@lesson, class: "form") do |f| %>
  
   <% if @lesson.errors.any? %>
     <div id="error_explanation">

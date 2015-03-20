@@ -68,7 +68,7 @@ class LessonsController < ApplicationController
   # PATCH/PUT /lessons/1.json
   def update
     
-    @lesson = @course.lessons.friendly.find(params[:id])
+    @lesson = Lesson.friendly.find(params[:id])
     authorize @lesson
     respond_to do |format|
       if @lesson.update(lesson_params)

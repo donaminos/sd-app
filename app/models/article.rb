@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :title, use: [:slugged, :history]
   
   acts_as_taggable
   acts_as_taggable_on :tags
@@ -15,13 +15,9 @@ class Article < ActiveRecord::Base
   belongs_to :user
 
 
+  def should_generate_new_friendly_id?
+      title_changed? || !self.slug.present?
+  end
 
 
-
-  	def slug_candidates
-    [
-      :title,
-      [:title, :created_at]     
-    ]
-  	end
 end
