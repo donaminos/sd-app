@@ -63,6 +63,7 @@ SdApp::Application.configure do
 
   config.assets.precompile += ['active_admin.css', 'active_admin.js'] 
 
+  config.force_ssl = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
